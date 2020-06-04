@@ -113,3 +113,5 @@ dist
 # build dir
 build
 
+# tests
+*.testresults.json

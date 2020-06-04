@@ -1,5 +1,6 @@
 module.exports = {
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+	modulePathIgnorePatterns: ["<rootDir>/dist/"],
 	verbose: true,
 	setupFilesAfterEnv: ["jest-enzyme"],
 	testEnvironment: "enzyme",

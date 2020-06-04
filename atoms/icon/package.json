@@ -17,7 +17,7 @@
 		"prebuild": "rimraf dist",
 		"build": "rollup -c",
 		"watch": "rollup -cw",
-    "test": "jest",
+    "test": "jest ",
     "test:generate-output": "jest --json --outputFile=stories/icon.testresults.json"
   },
 	"dependencies": {
