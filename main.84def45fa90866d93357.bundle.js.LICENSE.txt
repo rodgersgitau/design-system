@@ -1,0 +1,15 @@
+/*!
+ * Copyright (c) Gregor Adams
+ * @author Gregor Adams
+ * @license MIT
+ * @name @evernest/icons
+ * @version 0.0.0
+ */
+
+/*!
+ * Copyright (c) Gregor Adams
+ * @author Gregor Adams
+ * @license MIT
+ * @name @evernest/storybook
+ * @version 0.0.0
+ */
