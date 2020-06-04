@@ -1,0 +1,35 @@
+{
+	"name": "@evernest/icon",
+	"version": "0.0.0",
+	"author": {
+		"email": "gregor.adams@evernest.com",
+		"name": "Gregor Adams"
+	},
+	"license": "MIT",
+	"main": "index.js",
+	"module": "dist/esm/index.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"index.js"
+	],
+	"scripts": {
+		"prebuild": "rimraf dist",
+		"build": "rollup -c",
+		"watch": "rollup -cw",
+    "test": "jest",
+    "test:generate-output": "jest --json --outputFile=stories/icon.testresults.json"
+  },
+	"dependencies": {
+    "@evernest/icons": "^0.0.0",
+		"@emotion/core": "^10.0.28",
+		"@emotion/styled": "^10.0.27",
+		"@types/react": "^16.9.35",
+    "humanize-string": "^2.1.0",
+    "react": "^16.13.1"
+	},
+	"devDependencies": {
+		"@evernest/toolchain": "^0.0.0",
+    "@evernest/storybook": "^0.0.0"
+  }
+}
