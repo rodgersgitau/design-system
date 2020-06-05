@@ -1,0 +1,3 @@
+{
+	"extends": "@evernest/toolchain/babel.config"
+}
