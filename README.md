@@ -26,6 +26,6 @@ yarn storybook
 yarn test
 ```
 
-[docs]: https://everdevs.github.io/react-components/
+[docs]: https://everdevs.github.io/design-system/
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge
-[license]: https://github.com/everdevs/react-components/blob/master/LICENSE
+[license]: https://github.com/everdevs/design-system/blob/master/LICENSE
