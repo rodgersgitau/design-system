@@ -28,7 +28,6 @@
     "prestorybook": "yarn test:generate-output",
     "storybook": "start-storybook -p 3000",
     "stylelint": "stylelint '**/*.{ts,tsx}'",
-    "pretest": "yarn build",
     "test": "jest",
     "pretest:generate-output": "yarn build",
     "test:generate-output": "lerna run test:generate-output --parallel",
