@@ -6,6 +6,10 @@
 		"email": "gregor.adams@evernest.com"
 	},
 	"files": [
-		"rollup.config.js"
+    "babel.config.js",
+    "jest.config.js",
+    "rollup.config.js",
+    "tsconfig.json",
+    "tsconfig.test.json"
 	]
 }
