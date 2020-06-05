@@ -1,11 +1,11 @@
 {
 	"name": "@evernest/button",
 	"version": "0.0.0",
-	"author": {
-		"email": "gregor.adams@evernest.com",
-		"name": "Gregor Adams"
-	},
 	"license": "MIT",
+	"author": {
+		"name": "Gregor Adams",
+		"email": "gregor.adams@evernest.com"
+	},
 	"main": "index.js",
 	"module": "dist/esm/index.js",
 	"typings": "dist/index.d.ts",
@@ -14,12 +14,9 @@
 		"index.js"
 	],
 	"scripts": {
-		"prebuild": "rimraf dist",
 		"build": "rollup -c",
-		"watch": "rollup -cw",
-    "test:watch": "jest --watch",
-    "test": "jest",
-    "test:generate-output": "jest --json --outputFile=stories/button.testresults.json"
+		"clean": "rimraf dist stories/button.testresults.json",
+		"test:generate-output": "jest --json --outputFile=stories/button.testresults.json"
 	},
 	"dependencies": {
 		"@emotion/core": "^10.0.28",
@@ -28,7 +25,7 @@
 		"react": "^16.13.1"
 	},
 	"devDependencies": {
-		"@evernest/toolchain": "^0.0.0",
-		"@evernest/storybook": "^0.0.0"
+		"@evernest/storybook": "^0.0.0",
+		"@evernest/toolchain": "^0.0.0"
 	}
 }

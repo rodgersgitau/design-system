@@ -1,0 +1,3 @@
+{
+  "extends": "../utils/toolchain/tsconfig.json"
+}

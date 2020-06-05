@@ -1,23 +1,21 @@
 {
 	"name": "@evernest/icons",
 	"version": "0.0.0",
-	"author": {
-		"email": "gregor.adams@evernest.com",
-		"name": "Gregor Adams"
-	},
 	"license": "MIT",
+	"author": {
+		"name": "Gregor Adams",
+		"email": "gregor.adams@evernest.com"
+	},
 	"main": "index.js",
 	"module": "dist/esm/index.js",
 	"typings": "dist/index.d.ts",
 	"files": [
 		"dist",
-    "!dist/",
 		"index.js"
 	],
 	"scripts": {
-		"prebuild": "rimraf dist",
 		"build": "rollup -c",
-		"watch": "rollup -cw"
+		"clean": "rimraf dist"
 	},
 	"devDependencies": {
 		"@evernest/toolchain": "^0.0.0"

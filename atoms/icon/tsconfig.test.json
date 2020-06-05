@@ -1,7 +1,0 @@
-{
-  "extends": "@evernest/toolchain/tsconfig.test.json",
-	"compilerOptions": {
-		"outDir": "dist",
-		"declarationDir": "dist"
-	}
-}

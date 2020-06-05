@@ -1,9 +1,12 @@
 module.exports = {
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-	modulePathIgnorePatterns: ["<rootDir>/dist/"],
+	modulePathIgnorePatterns: ["/dist/"],
 	verbose: true,
 	setupFilesAfterEnv: ["jest-enzyme"],
 	testEnvironment: "enzyme",
+	moduleNameMapper: {
+		"^@evernest/(.*)": "<rootDir>/atoms/$1/src",
+	},
 	transformIgnorePatterns: [
 		"node_modules/(?!(jest-)?react-native|react-(native|universal|navigation)-(.*)|@react-native-community/(.*)|@react-navigation/(.*)|bs-platform)",
 	],
@@ -12,7 +15,7 @@ module.exports = {
 	},
 	globals: {
 		"ts-jest": {
-			tsConfig: "tsconfig.test.json",
+			tsConfig: "tsconfig.json",
 		},
 	},
 };
