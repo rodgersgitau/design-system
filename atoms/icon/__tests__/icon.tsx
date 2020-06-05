@@ -10,3 +10,14 @@ test("Icon contains text", () => {
 	);
 	expect(wrapper.find(Icon).text()).toEqual("Accessibility");
 });
+
+test("Icon allows setting classname", () => {
+	const text = "Hello Button";
+	const className = "test";
+	const wrapper = mount(
+		<div>
+			<Icon className={className} icon="accessibility" />
+		</div>
+	);
+	expect(wrapper.find(Icon)).toHaveClassName(className);
+});
