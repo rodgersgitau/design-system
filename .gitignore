@@ -107,6 +107,9 @@ dist
 # TernJS port file
 .tern-port
 
+# Fix ignores
+# Not sure why we need this but we do!!
+!atoms/icon
 
 # build dir
 build
