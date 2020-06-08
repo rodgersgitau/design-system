@@ -1,4 +1,4 @@
-# Evernest React Components
+# Evernest Design System
 
 ## [Documentation][docs]
 
@@ -6,7 +6,7 @@
 [![Coverage][coverage-badge]][codacy]
 [![Grade][grade-badge]][codacy]
 
-This is the contributor documentation for the `everdevs/react-comonents` mono-repository.
+This is the contributor documentation for the `@everdevs` mono-repository.
 For user docs see the [Documentation][docs].
 
 ### Build
