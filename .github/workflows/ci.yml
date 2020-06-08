@@ -1,0 +1,36 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - "**"
+
+jobs:
+    tests:
+        name: Tests
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout working branch
+              uses: actions/checkout@v1
+
+            - name: Set up Node 12
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12.18.0
+
+            - name: Get npm cache directory
+              id: npm-cache
+              run: |
+                  echo "::set-output name=dir::$(npm config get cache)"
+            - uses: actions/cache@v1
+              with:
+                  path: ${{ steps.npm-cache.outputs.dir }}
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
+
+            - name: Install dependencies
+              run: yarn install
+
+            - name: Run Tests
+              run: yarn test
