@@ -7,7 +7,7 @@ on:
 
 jobs:
     tests:
-        name: Tests
+        name: Deploy
         runs-on: ubuntu-latest
         steps:
             - name: Checkout working branch
@@ -32,10 +32,18 @@ jobs:
             - name: Install dependencies
               run: yarn install
 
+            - name: Run Tests
+              run: yarn test
+
+            - name: Upload Coverage
+              run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
+              env:
+                CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
             - name: Predeploy
               run: yarn predeploy
 
-            - name: Deploy
+            - name: Deploy on gh-pages
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -7,7 +7,7 @@ on:
 
 jobs:
     tests:
-        name: Tests
+        name: Test
         runs-on: ubuntu-latest
         steps:
             - name: Checkout working branch
@@ -34,3 +34,8 @@ jobs:
 
             - name: Run Tests
               run: yarn test
+
+            - name: Upload Coverage
+              run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
+              env:
+                CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
