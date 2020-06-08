@@ -1,5 +1,12 @@
 const path = require("path");
 
+function makeAlias(dir, names) {
+	return names.reduce((previousValue, name) => ({
+		...previousValue,
+		[`@evernest/${name}`]: path.resolve(__dirname, `../${dir}/${name}/src`),
+	}), {});
+}
+
 module.exports = {
 	stories: ["../**/stories/*.(ts|md)x"],
 	addons: [
@@ -8,7 +15,7 @@ module.exports = {
 		"@storybook/addon-knobs/register",
 		"@storybook/addon-backgrounds/register",
 		"@storybook/addon-jest/register",
-		"@storybook/addon-links",
+		"@storybook/addon-links/register",
 		"@storybook/addon-docs",
 		{
 			name: "@storybook/preset-typescript",
@@ -23,28 +30,38 @@ module.exports = {
 			},
 		},
 	],
-	webpackFinal: async config => {
-		config.module.rules.push({
-			test: /\.(ts|tsx)$/,
-			use: [
+	webpackFinal: async config => ({
+		...config,
+		resolve: {
+			...(config.resolve || {}),
+			alias: {
+				...(config.resolve.alias || {}),
+				// make sure the local packages can be found without building them
+				...makeAlias("utils", ["storybook"]),
+				...makeAlias("atoms", ["icons", "icon", "button"]),
+			},
+		},
+		module: {
+			...(config.module || {}),
+			rules: [
+				...(config.module.rules || []),
 				{
-					loader: require.resolve("ts-loader"),
-				},
-				{
-					loader: require.resolve("react-docgen-typescript-loader"),
-					options: {
-						// Provide the path to your tsconfig.json so that your stories can
-						// display types from outside each individual story.
-						tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
-					},
+					test: /\.(ts|tsx)$/,
+					use: [
+						{
+							loader: require.resolve("ts-loader"),
+						},
+						{
+							loader: require.resolve("react-docgen-typescript-loader"),
+							options: {
+								// Provide the path to your tsconfig.json so that your stories can
+								// display types from outside each individual story.
+								tsconfigPath: path.resolve(__dirname, "../tsconfig.json"),
+							},
+						},
+					],
 				},
 			],
-		});
-
-		config.resolve.alias = config.resolve.alias || {};
-		config.resolve.alias["@evernest/storybook"] = path.resolve(__dirname, '../utils/storybook/src');
-		config.resolve.alias["@evernest/icons"] = path.resolve(__dirname, '../atoms/icons/src');
-		config.resolve.extensions.push(".ts", ".tsx");
-		return config;
-	},
+		},
+	}),
 };
