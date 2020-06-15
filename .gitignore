@@ -123,3 +123,6 @@ build
 # This project uses Yarn
 # ignore package-lock.json
 package-lock.json
+
+## Generated files
+package-names.json

@@ -1,0 +1,22 @@
+---
+engines:
+  duplication:
+    enabled: true
+    exclude_paths:
+      - '.storybook'
+      - '**/__tests__/**'
+  coverage:
+    enabled: true
+    exclude_paths:
+      - '.storybook'
+      - '**/__tests__/**'
+      - '**/types.ts'
+exclude_paths:
+  - '.github/**'
+  - '.*rc'
+  - '.*rc.js'
+  - '.*rc.json'
+  - '.*.yml'
+  - 'tsconfig.json'
+  - '**.config.js'
+  - 'init.js'
