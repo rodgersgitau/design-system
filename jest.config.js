@@ -19,9 +19,11 @@ module.exports = {
 	testEnvironment: "enzyme",
 	moduleNameMapper: {
 		...makeAlias("utils", packages.utils),
+		...makeAlias("ions", packages.ions),
 		...makeAlias("atoms", packages.atoms),
 		...makeAlias("molecules", packages.molecules),
 		...makeAlias("organisms", packages.organisms),
+		...makeAlias("layout", packages.layout),
 	},
 	transformIgnorePatterns: [
 		"node_modules/(?!(jest-)?react-native|react-(native|universal|navigation)-(.*)|@react-native-community/(.*)|@react-navigation/(.*)|bs-platform)",
