@@ -93,6 +93,12 @@ const FixedHeader = styled.div<PropsWithTheme>`
 const DemoFooter = styled.div`
 	height: 300px;
 `;
+function random(max: number, min: number = 0) {
+	return Math.floor(Math.random() * max) + min;
+}
+function randomColor() {
+	return `hsla(${random(359)},50%,50%,0.75)`;
+}
 
 export const WithGrid: React.FC = () => {
 	return (
@@ -100,28 +106,46 @@ export const WithGrid: React.FC = () => {
 			<GridOverlay toggle />
 			<Grid overflow>
 				<Row>
-					<Column s={4} raw>
-						<ColorBox />
-					</Column>
-					<Column s={4} raw>
-						<ColorBox />
-					</Column>
-					<Column s={4} raw>
-						<ColorBox />
+					<Column>
+						<br />
+						<br />
 					</Column>
 				</Row>
 				<Row>
-					<Column s={3} raw>
-						<ColorBox />
+					<Column s={4} raw>
+						<ColorBox background={randomColor()} />
 					</Column>
-					<Column s={3} raw>
-						<ColorBox />
+					<Column s={4} raw>
+						<ColorBox background={randomColor()} />
 					</Column>
-					<Column s={3} raw>
-						<ColorBox />
+					<Column s={4} raw>
+						<ColorBox background={randomColor()} />
 					</Column>
-					<Column s={3} raw>
-						<ColorBox />
+				</Row>
+				<Row>
+					<Column>
+						<br />
+						<br />
+					</Column>
+				</Row>
+				<Row>
+					<Column s={2} l={3} raw>
+						<ColorBox background={randomColor()} />
+					</Column>
+					<Column s={2} l={3} raw>
+						<ColorBox background={randomColor()} />
+					</Column>
+					<Column s={2} l={3} raw>
+						<ColorBox background={randomColor()} />
+					</Column>
+					<Column s={2} l={3} raw>
+						<ColorBox background={randomColor()} />
+					</Column>
+				</Row>
+				<Row>
+					<Column>
+						<br />
+						<br />
 					</Column>
 				</Row>
 			</Grid>
@@ -160,10 +184,10 @@ export const WithLayout: Story = () => {
 					<Grid>
 						<Row>
 							<Column l={6} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={6} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 						</Row>
 						<Row>
@@ -174,13 +198,13 @@ export const WithLayout: Story = () => {
 						</Row>
 						<Row>
 							<Column l={4} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={4} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={4} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 						</Row>
 						<Row>
@@ -191,16 +215,16 @@ export const WithLayout: Story = () => {
 						</Row>
 						<Row>
 							<Column l={3} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={3} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={3} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={3} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 						</Row>
 						<Row>
@@ -211,22 +235,22 @@ export const WithLayout: Story = () => {
 						</Row>
 						<Row>
 							<Column l={2} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={2} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={2} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={2} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={2} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={2} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 						</Row>
 						<Row>
@@ -237,40 +261,46 @@ export const WithLayout: Story = () => {
 						</Row>
 						<Row>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
 							</Column>
 							<Column l={1} raw>
-								<ColorBox />
+								<ColorBox background={randomColor()} />
+							</Column>
+						</Row>
+						<Row>
+							<Column>
+								<br />
+								<br />
 							</Column>
 						</Row>
 					</Grid>
@@ -293,9 +323,7 @@ const story: Meta = {
 		jest: ["grid"],
 		docs: {
 			inlineStories: false,
-			story: {
-				iframeHeight: 500,
-			},
+			iframeHeight: 500,
 		},
 	},
 };

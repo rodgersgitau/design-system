@@ -22,9 +22,5 @@ const StyledHeaderLink = styled.a<StyledHeaderLinkProps>`
 `;
 
 export const HeaderLink = React.forwardRef<HeaderLinkProps, StyledHeaderLinkProps>(
-	({ children, className, ...props }, ref) => (
-		<StyledHeaderLink className={className} ref={ref}>
-			{children}
-		</StyledHeaderLink>
-	)
+	({ ...props }, ref) => <StyledHeaderLink {...props} ref={ref} />
 );
