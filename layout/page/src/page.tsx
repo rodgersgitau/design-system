@@ -9,7 +9,16 @@ export const Page = styled.div<PropsWithTheme>`
 	display: grid;
 	grid-template-areas: "Header" "Main" "Footer";
 	min-height: 100vh;
-	${({ theme: { mq, layout } }) => css`
+	${({ theme: { mq, layout, spaces } }) => css`
+		--spacing-xxxs: ${spaces.xxxs}px;
+		--spacing-xxs: ${spaces.xxs}px;
+		--spacing-xs: ${spaces.xs}px;
+		--spacing-s: ${spaces.s}px;
+		--spacing-m: ${spaces.m}px;
+		--spacing-l: ${spaces.l}px;
+		--spacing-xl: ${spaces.xl}px;
+		--spacing-xxl: ${spaces.xxl}px;
+		--spacing-xxxl: ${spaces.xxxl}px;
 		--header-height: ${layout.header.height.s}px;
 		@media ${mq.m} {
 			--header-height: ${layout.header.height.m}px;

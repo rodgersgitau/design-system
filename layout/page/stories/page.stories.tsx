@@ -2,10 +2,11 @@ import React from "react";
 import { withWrapper } from "@evernest/dev-helpers";
 import { EvernestLogo } from "@evernest/evernest-logo";
 import { Footer } from "@evernest/footer";
+import { FooterLink } from "@evernest/footer-link";
 import { Column, Flex, Grid, GridOverlay, Row } from "@evernest/grid";
-import { HeaderLink } from "@evernest/header-link";
 import { Header } from "@evernest/header";
-import { Menu } from "@evernest/menu";
+import { HeaderLink } from "@evernest/header-link";
+import { Menu, MenuDirection } from "@evernest/menu";
 import { withTests } from "@storybook/addon-jest";
 import { Meta, Story } from "@storybook/react";
 import {
@@ -28,7 +29,7 @@ export const PageLayout: Story = () => {
 								<Column raw>
 									<Flex>
 										<EvernestLogo />
-										<Menu>
+										<Menu aria-label="header-navigation-1">
 											<HeaderLink href="#">Link 1</HeaderLink>
 											<HeaderLink href="#">Link 2</HeaderLink>
 											<HeaderLink href="#">Link 3</HeaderLink>
@@ -43,7 +44,39 @@ export const PageLayout: Story = () => {
 				</HeaderArea>
 				<MainArea />
 				<FooterArea>
-					<Footer />
+					<Footer>
+						<Grid overflow>
+							<Row>
+								<Column l={4} raw>
+									<Menu
+										direction={MenuDirection.vertical}
+										aria-label="footer-navigation-1"
+									>
+										<FooterLink href="#">Link 1</FooterLink>
+										<FooterLink href="#">Link 2</FooterLink>
+									</Menu>
+								</Column>
+								<Column l={4} raw>
+									<Menu
+										direction={MenuDirection.vertical}
+										aria-label="footer-navigation-2"
+									>
+										<FooterLink href="#">Link 1</FooterLink>
+										<FooterLink href="#">Link 2</FooterLink>
+									</Menu>
+								</Column>
+								<Column l={4} raw>
+									<Menu
+										direction={MenuDirection.vertical}
+										aria-label="footer-navigation-3"
+									>
+										<FooterLink href="#">Link 1</FooterLink>
+										<FooterLink href="#">Link 2</FooterLink>
+									</Menu>
+								</Column>
+							</Row>
+						</Grid>
+					</Footer>
 				</FooterArea>
 			</Page>
 		</>

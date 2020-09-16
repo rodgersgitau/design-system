@@ -1,5 +1,7 @@
 import {
 	colorBlack,
+	colorBlue,
+	colorDarkGrey,
 	colorGreen,
 	colorGrey,
 	colorRed,
@@ -19,6 +21,10 @@ const palette: Palette = {
 		token: extractColor(colorGreen),
 		css: getColor(colorGreen),
 	},
+	blue: {
+		token: extractColor(colorBlue),
+		css: getColor(colorBlue),
+	},
 	black: {
 		token: extractColor(colorBlack),
 		css: getColor(colorBlack),
@@ -31,6 +37,10 @@ const palette: Palette = {
 		token: extractColor(colorGrey),
 		css: getColor(colorGrey),
 	},
+	darkGrey: {
+		token: extractColor(colorDarkGrey),
+		css: getColor(colorDarkGrey),
+	},
 };
 
 const colors: Colors = {
@@ -42,42 +52,15 @@ const colors: Colors = {
 };
 
 export const spaces: Spaces = {
-	s: {
-		xxs: 8,
-		xs: 16,
-		s: 24,
-		m: 32,
-		l: 40,
-		xl: 48,
-		xxl: 80,
-	},
-	m: {
-		xxs: 8,
-		xs: 16,
-		s: 24,
-		m: 32,
-		l: 40,
-		xl: 48,
-		xxl: 80,
-	},
-	l: {
-		xxs: 8,
-		xs: 16,
-		s: 24,
-		m: 32,
-		l: 40,
-		xl: 48,
-		xxl: 80,
-	},
-	xl: {
-		xxs: 8,
-		xs: 16,
-		s: 24,
-		m: 32,
-		l: 40,
-		xl: 48,
-		xxl: 80,
-	},
+	xxxs: 4,
+	xxs: 16,
+	xs: 24,
+	s: 32,
+	m: 40,
+	l: 48,
+	xl: 80,
+	xxl: 120,
+	xxxl: 184,
 };
 
 export const breakpoints: Breakpoints = {

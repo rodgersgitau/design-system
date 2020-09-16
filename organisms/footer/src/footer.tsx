@@ -4,9 +4,9 @@ import React from "react";
 import { StyledFooterProps, FooterProps } from "./types";
 
 export const StyledFooter = styled.div<StyledFooterProps>`
-	height: 300px;
+	padding: var(--spacing-xl) 0;
 	${({ theme: { palette } }) => css`
-		background: #232324;
+		background: ${palette.darkGrey.css};
 		color: ${palette.white.css};
 	`};
 `;

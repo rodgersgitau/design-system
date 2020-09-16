@@ -43,6 +43,12 @@ export const colorBrightGrey2 = createToken<ColorObject>(
 	"Evernest Bright Grey 2"
 );
 
+export const colorDarkGrey = createToken<ColorObject>(
+	"Dark Grey",
+	{ type: ColorType.hex, value: "232324" },
+	"Evernest Dark Grey"
+);
+
 export const colorRed = createToken<ColorObject>(
 	"Red",
 	{ type: ColorType.hex, value: "D50808" },
@@ -53,4 +59,10 @@ export const colorGreen = createToken<ColorObject>(
 	"Green",
 	{ type: ColorType.hex, value: "25BF48" },
 	"Evernest Green"
+);
+
+export const colorBlue = createToken<ColorObject>(
+	"Blue",
+	{ type: ColorType.hex, value: "0095D8" },
+	"Evernest Blue"
 );

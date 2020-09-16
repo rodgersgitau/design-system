@@ -13,7 +13,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
 	right: 0;
 	${({ theme: { palette }, fixed }) => css`
 		position: ${fixed ? "fixed" : "absolute"};
-		background: #232324;
+		background: ${palette.darkGrey.css};
 		color: ${palette.white.css};
 	`};
 `;

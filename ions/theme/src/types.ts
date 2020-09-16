@@ -10,9 +10,11 @@ export interface ThemeValue<T = unknown> {
 export interface Palette {
 	red: ThemeValue<ColorObject>;
 	green: ThemeValue<ColorObject>;
+	blue: ThemeValue<ColorObject>;
 	black: ThemeValue<ColorObject>;
 	white: ThemeValue<ColorObject>;
 	grey: ThemeValue<ColorObject>;
+	darkGrey: ThemeValue<ColorObject>;
 }
 
 export interface Colors {
@@ -23,7 +25,8 @@ export interface Colors {
 	darkText: ThemeValue<ColorObject>;
 }
 
-export interface Space {
+export interface Spaces {
+	xxxs: number;
 	xxs: number;
 	xs: number;
 	s: number;
@@ -31,6 +34,7 @@ export interface Space {
 	l: number;
 	xl: number;
 	xxl: number;
+	xxxl: number;
 }
 
 export interface Sizes {
@@ -46,13 +50,6 @@ export interface GridConfig {
 	maxWidth: number;
 	colSpan: Sizes;
 	debug?: boolean;
-}
-
-export interface Spaces {
-	s: Space;
-	m: Space;
-	l: Space;
-	xl: Space;
 }
 
 export interface Breakpoints {
