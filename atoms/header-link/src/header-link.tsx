@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { StyledHeaderLinkProps, HeaderLinkProps } from "./types";
+import { PropsWithTheme } from "@evernest/theme";
+import { css } from "@emotion/core";
 
-const StyledHighlight = styled.div`
+const StyledHighlight = styled.div<PropsWithTheme>`
 	pointer-events: none;
 	position: absolute;
 	top: 50%;
@@ -10,12 +12,17 @@ const StyledHighlight = styled.div`
 	height: var(--spacing-s);
 	width: 100%;
 	transform: translate(-50%, -50%);
-	background-color: rgba(255, 255, 255, 0);
-	transition: background-color 0.3s ease-in-out;
-	will-change: background-color;
+	transition: opacity 0.3s ease-in-out;
+	will-change: opacity;
+	opacity: var(--highlight-opacity);
+	${({ theme: { palette } }) => css`
+		background: ${palette.white.css};
+	`};
 `;
 
 const StyledHeaderLink = styled.a<StyledHeaderLinkProps>`
+	--highlight-opacity: 0;
+
 	position: relative;
 	display: inline-flex;
 	font-family: sans-serif;
@@ -29,9 +36,7 @@ const StyledHeaderLink = styled.a<StyledHeaderLinkProps>`
 	border-radius: 2px;
 
 	&:hover {
-		${StyledHighlight} {
-			background-color: rgba(255, 255, 255, 0.1);
-		}
+		--highlight-opacity: 0.1;
 	}
 `;
 
