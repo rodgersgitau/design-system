@@ -34,5 +34,5 @@ export default create({
 	brandTitle: "Evernest",
 	brandUrl: "https://github.com/everdevs/design-system",
 	brandImage:
-		"https://raw.githubusercontent.com/everdevs/design-system/master/public/images/evernest-logo-tagline-black.png",
+		"https://raw.githubusercontent.com/everdevs/design-system/master/public/images/evernest-logo-tagline-black.png?token=AAIYLLT6P2A7732WNGFW4CC7NIDXK",
 });

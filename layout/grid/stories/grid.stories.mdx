@@ -1,0 +1,561 @@
+import { Box, Column, COLUMN, Grid, Row, Stage } from '../src';
+import {Wrapper} from "@evernest/dev-helpers";
+import { Meta } from "@storybook/addon-docs/blocks";
+import { CustomColorBox } from "./shared";
+
+<Meta title="Docs/Grid" />
+
+## Usage
+
+The grid-layout follows a very simple logic. (Grid -> Row -> Column -> Row -> Column ...)
+
+- A grid aware area needs to be wrapped in a `<Grid>`.
+- The direct descendent of a `<Grid>` must be a `<Row>`.
+- The direct descendent of a `<Row>` must be a `<Column>`.
+- The direct descendent of a `<Column>` can be any `ReactNode` or a `<Row>`.
+- A `<Row>` can be a deep descendent of a `<Column>` as long as
+  `padding` and `margin` on the x-axis remain unset.
+
+```
+Grid
+  ┣━ Row
+  ┃ ┣━ Column
+  ┃ ┃ ┣━ ReactNode
+  ┃ ┃ ┣━ Element
+  ┃ ┃ ┃ ┗━ Component
+  ┃ ┃ ┃   ┗━ Row
+  ┃ ┃ ┃     ┗━ Column
+  ┃ ┃ ┣━ Row
+  ┃ ┃ ┃ ┗━ Column
+  ┃ ┃ ┃   ┣━ ReactNode
+  ┃ ┃ ┃   ┗━ ...
+  ┃ ┃ ┗━ ...
+  ┃ ┣━ Column
+  ┃ ┗━ ...
+  ┣━ Row
+  ┗━ ...
+```
+
+## Simple
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+      </Row>
+    </Grid>
+  );
+}
+```
+
+<Wrapper>
+    <Grid>
+      <Row>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+      </Row>
+    </Grid>
+</Wrapper>
+
+## Hide Columns
+
+You can hide columns by assigning `0`. Look at the example. The first three columns (background: crimson/pink) should
+disappear on `m` upwards.
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row>
+        <Column s={2} m={0}>
+          <CustomColorBox style={{ background: 'crimson' }} />
+        </Column>
+        <Column s={2} m={0}>
+          <CustomColorBox style={{ background: 'crimson' }} />
+        </Column>
+        <Column s={2} m={0}>
+          <CustomColorBox style={{ background: 'crimson' }} />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+      </Row>
+    </Grid>
+  );
+}
+```
+
+<Wrapper>
+    <Grid>
+      <Row>
+        <Column s={2} m={0}>
+          <CustomColorBox style={{ background: 'crimson' }} />
+        </Column>
+        <Column s={2} m={0}>
+          <CustomColorBox style={{ background: 'crimson' }} />
+        </Column>
+        <Column s={2} m={0}>
+          <CustomColorBox style={{ background: 'crimson' }} />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+        <Column s={2}>
+          <CustomColorBox />
+        </Column>
+      </Row>
+    </Grid>
+</Wrapper>
+
+## Stage
+
+The Stage allows breaking out of the grid and starting with a full width container.
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row>
+        <Column>
+          <Stage>
+            <CustomColorBox />
+          </Stage>
+        </Column>
+      </Row>
+    </Grid>
+  );
+}
+```
+
+<Wrapper>
+    <Grid>
+      <Row>
+        <Column>
+          <Stage>
+            <CustomColorBox />
+          </Stage>
+        </Column>
+      </Row>
+    </Grid>
+</Wrapper>
+
+## Nested
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row>
+        <Column>
+          <Row>
+            <Column s={2}>
+              <CustomColorBox>1.1</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.2</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.3</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.4</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.5</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.6</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+        <Column s={2} m={4}>
+          <Row>
+            <Column s={2}>
+              <CustomColorBox>2.1</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>2.2</CustomColorBox>
+            </Column>
+            <Column>
+              <CustomColorBox>2.3</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+        <Column s={2} flex>
+          <CustomColorBox>3</CustomColorBox>
+        </Column>
+        <Column s={2}>
+          <Row>
+            <Column>
+              <CustomColorBox>4.1</CustomColorBox>
+            </Column>
+            <Column>
+              <CustomColorBox>4.2</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+        <Column s={2} flex>
+          <CustomColorBox>5</CustomColorBox>
+        </Column>
+        <Column s={2} flex>
+          <CustomColorBox>6</CustomColorBox>
+        </Column>
+      </Row>
+    </Grid>
+  );
+}
+```
+
+<Wrapper>
+    <Grid>
+      <Row>
+        <Column>
+          <Row>
+            <Column s={2}>
+              <CustomColorBox>1.1</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.2</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.3</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.4</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.5</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>1.6</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+        <Column s={2} m={4}>
+          <Row>
+            <Column s={2}>
+              <CustomColorBox>2.1</CustomColorBox>
+            </Column>
+            <Column s={2}>
+              <CustomColorBox>2.2</CustomColorBox>
+            </Column>
+            <Column>
+              <CustomColorBox>2.3</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+        <Column s={2} flex>
+          <CustomColorBox>3</CustomColorBox>
+        </Column>
+        <Column s={2}>
+          <Row>
+            <Column>
+              <CustomColorBox>4.1</CustomColorBox>
+            </Column>
+            <Column>
+              <CustomColorBox>4.2</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+        <Column s={2} flex>
+          <CustomColorBox>5</CustomColorBox>
+        </Column>
+        <Column s={2} flex>
+          <CustomColorBox>6</CustomColorBox>
+        </Column>
+      </Row>
+    </Grid>
+</Wrapper>
+
+## Row
+
+There are two types of rows, the default and the `raw` version. A `<Column raw>`
+must contain a `<Row raw>` to allow nesting. Any type of row can host
+`<Column raw>` and `<Column>`.
+
+**additional options**
+
+Rows can be defined as `reverse` (reverse ordering of child column) and/or
+`noWrap` (overflowing child column).
+
+## Column
+
+There are two types of column, the default and the `raw` version. The default
+column includes the grid-padding while the `raw` column does not. This allows
+a lot of flexibility when creating complex layouts.
+
+You can add the `boolean` property `flex` to make the Column use `display: flex`.
+This allows you to stretch child elements for cosmetic purposes.
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row reverse noWrap>
+        <Column l={10} raw>
+          <CustomColorBox>raw | noWrap | reverse</CustomColorBox>
+        </Column>
+        <Column s={2} raw>
+          <Row raw>
+            <Column s={2}>
+              <CustomColorBox>default | noWrap | reverse</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+      </Row>
+      <Row>
+        <Column s={4} flex>
+          <CustomColorBox>default</CustomColorBox>
+        </Column>
+        <Column s={2}>
+          <Row>
+            <Column s={2} raw>
+              <CustomColorBox>raw</CustomColorBox>
+            </Column>
+          </Row>
+          <Row>
+            <Column s={2} raw>
+              <CustomColorBox>raw</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+      </Row>
+    </Grid>
+  );
+}
+```
+
+<Wrapper>
+    <Grid>
+      <Row reverse noWrap>
+        <Column l={10} raw>
+          <CustomColorBox>raw | noWrap</CustomColorBox>
+        </Column>
+        <Column s={2} raw>
+          <Row raw>
+            <Column s={2}>
+              <CustomColorBox>default | noWrap</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+      </Row>
+      <Row>
+        <Column s={4} flex>
+          <CustomColorBox>default</CustomColorBox>
+        </Column>
+        <Column s={2}>
+          <Row>
+            <Column s={2} raw>
+              <CustomColorBox>raw</CustomColorBox>
+            </Column>
+          </Row>
+          <Row>
+            <Column s={2} raw>
+              <CustomColorBox>raw</CustomColorBox>
+            </Column>
+          </Row>
+        </Column>
+      </Row>
+    </Grid>
+</Wrapper>
+
+### Colspan
+
+Columns use the full width by default. You can define how wide a column is by
+defining the units.
+
+Columns follow the mobile-first approach, starting with `xs` for the smallest
+viewport. the value can be a number, or a css variable call that returns a number.
+
+| prop | type           | description   | default                |
+| ---- | -------------- | ------------- | ---------------------- |
+| s    | number, string | small view    | `var(--GRID-colcount)` |
+| m    | number, string | medium view   | `props.s`              |
+| l    | number, string | large view    | `props.m`              |
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row>
+        <Column>
+          <CustomColorBox>1</CustomColorBox>
+        </Column>
+        <Column m={4}>
+          <CustomColorBox>2</CustomColorBox>
+        </Column>
+        <Column s={2} m={4} l={8}>
+          <CustomColorBox>3</CustomColorBox>
+        </Column>
+        <Column>
+          <CustomColorBox>4</CustomColorBox>
+        </Column>
+      </Row>
+    </Grid>
+  );
+}
+```
+
+<Wrapper>
+    <Grid>
+      <Row>
+        <Column>
+          <CustomColorBox>1</CustomColorBox>
+        </Column>
+        <Column m={4}>
+          <CustomColorBox>2</CustomColorBox>
+        </Column>
+        <Column s={2} m={4} l={8}>
+          <CustomColorBox>3</CustomColorBox>
+        </Column>
+        <Column>
+          <CustomColorBox>4</CustomColorBox>
+        </Column>
+      </Row>
+    </Grid>
+</Wrapper>
+
+### CSS variables
+
+The default width for a column is `var(--GRID-colcount)` which means it uses all
+available columns. You can use the provided constants or define your own logic.
+
+**constants**
+
+- `COLUMN.ONE`: `var(--GRID-colcount)` (full width)
+- `COLUMN.TWO`: `calc(var(--GRID-colcount) / 2)` (split in two)
+- `COLUMN.THREE`: `calc(var(--GRID-colcount) / 3)` (split in three)
+- `COLUMN.FOUR`: `calc(var(--GRID-colcount) / 4)` (split in four)
+
+> WARNING: Custom logic might break the nesting. Be careful.
+
+```css
+:root {
+  --my-custom-variable: 4;
+}
+```
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row>
+        <Column m={COLUMN.THREE}/>
+        <Column m={`var(--my-custom-variable)`}/>
+        <Column m={`calc(var(--my-custom-variable) / 2)`}/>
+      </Row>
+    </Grid>
+  )
+}
+```
+
+<Wrapper>
+  <Grid>
+    <Row>
+      <Column m={COLUMN.THREE}/>
+      <Column m={`var(--my-custom-variable)`}/>
+      <Column m={`calc(var(--my-custom-variable) / 2)`}/>
+    </Row>
+  </Grid>
+</Wrapper>
+
+
+## Box
+
+If you need to add padding inside a `raw` column, you can use `<Box>`.
+
+`<Box>` can also be used as a base component for styled-components.
+
+```jsx
+const Card = styled(Box)`
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+  background: crimson;
+  color: white;
+`;
+```
+
+```jsx
+function MyComponent() {
+  return (
+    <Grid>
+      <Row>
+        <Column s={2}>
+          <CustomColorBox>default</CustomColorBox>
+        </Column>
+        <Column s={2} raw>
+          <CustomColorBox>raw</CustomColorBox>
+        </Column>
+        <Column s={2} raw>
+          <Box>
+            <CustomColorBox>with Box</CustomColorBox>
+          </Box>
+        </Column>
+      </Row>
+    </Grid>
+  );
+}
+```
+
+<Wrapper>
+    <Grid>
+      <Row>
+        <Column s={2}>
+          <CustomColorBox>default</CustomColorBox>
+        </Column>
+        <Column s={2} raw>
+          <CustomColorBox>raw</CustomColorBox>
+        </Column>
+        <Column s={2} raw>
+          <Box>
+            <CustomColorBox>with Box</CustomColorBox>
+          </Box>
+        </Column>
+      </Row>
+    </Grid>
+</Wrapper>

@@ -64,3 +64,11 @@ export interface GridContextConfig extends GridConfig {
 export interface GridContextProps {
 	grid: GridConfig;
 }
+
+export interface BoxProps {
+	removePadding?: boolean;
+	addPadding?: boolean;
+	removeGutter?: boolean;
+	addGutter?: boolean;
+	flex?: boolean;
+}

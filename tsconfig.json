@@ -1,61 +1,64 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "alwaysStrict": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "jsx": "react",
-    "sourceMap": true,
-    "strict": false,
-    "target": "es6",
-    "types": [
-      "jest",
-      "jest-enzyme"
-    ],
-    "baseUrl": "./",
-    "paths": {
-      "@evernest/dev-helpers": [
-        "./utils/dev-helpers/src"
-      ],
-      "@evernest/icons": [
-        "./ions/icons/src"
-      ],
-      "@evernest/theme": [
-        "./ions/theme/src"
-      ],
-      "@evernest/tokens": [
-        "./ions/tokens/src"
-      ],
-      "@evernest/normalize-css": [
-        "./ions/normalize-css/src"
-      ],
-      "@evernest/button": [
-        "./atoms/button/src"
-      ],
-      "@evernest/icon": [
-        "./atoms/icon/src"
-      ],
-      "@evernest/header-link": [
-        "./atoms/header-link/src"
-      ],
-      "@evernest/menu": [
-        "./molecules/menu/src"
-      ],
-      "@evernest/grid": [
-        "./layout/grid/src"
-      ]
-    }
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "alwaysStrict": true,
+        "declaration": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "lib": [
+            "dom",
+            "esnext"
+        ],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "jsx": "react",
+        "sourceMap": true,
+        "strict": false,
+        "target": "es6",
+        "types": [
+            "jest",
+            "jest-enzyme"
+        ],
+        "baseUrl": "./",
+        "paths": {
+            "@evernest/dev-helpers": [
+                "./utils/dev-helpers/src"
+            ],
+            "@evernest/icons": [
+                "./ions/icons/src"
+            ],
+            "@evernest/normalize-css": [
+                "./ions/normalize-css/src"
+            ],
+            "@evernest/theme": [
+                "./ions/theme/src"
+            ],
+            "@evernest/tokens": [
+                "./ions/tokens/src"
+            ],
+            "@evernest/button": [
+                "./atoms/button/src"
+            ],
+            "@evernest/header-link": [
+                "./atoms/header-link/src"
+            ],
+            "@evernest/icon": [
+                "./atoms/icon/src"
+            ],
+            "@evernest/menu": [
+                "./molecules/menu/src"
+            ],
+            "@evernest/page": [
+                "./layout/page/src"
+            ],
+            "@evernest/grid": [
+                "./layout/grid/src"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
 }

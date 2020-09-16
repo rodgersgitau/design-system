@@ -115,7 +115,7 @@ export const grid: GridConfig = {
 	gutter,
 	gridPadding,
 	padding,
-	maxWidth: breakpoints.xl,
+	maxWidth: breakpoints.xl - gridPadding.l * 2,
 	colSpan: {
 		s: 4,
 		m: 8,

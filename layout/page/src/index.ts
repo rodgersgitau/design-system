@@ -1,0 +1,10 @@
+export * from "./header";
+export * from "./footer";
+export * from "./main";
+export * from "./page";
+export { FontFaces } from "./styles";
+export { GlobalStyles } from "./styles";
+export { Normalize } from "./styles";
+export { fontFaces } from "./styles";
+export { globalStyles } from "./styles";
+export { cssNormalize } from "./styles";
