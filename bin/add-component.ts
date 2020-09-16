@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import fs from "fs";
 import { copy, mkdirp } from "fs-extra";
 import pify from "pify";

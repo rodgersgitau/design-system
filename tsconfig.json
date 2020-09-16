@@ -41,20 +41,29 @@
             "@evernest/button": [
                 "./atoms/button/src"
             ],
-            "@evernest/header-link": [
-                "./atoms/header-link/src"
+            "@evernest/evernest-logo": [
+                "./atoms/evernest-logo/src"
             ],
             "@evernest/icon": [
                 "./atoms/icon/src"
             ],
+            "@evernest/header-link": [
+                "./atoms/header-link/src"
+            ],
             "@evernest/menu": [
                 "./molecules/menu/src"
             ],
-            "@evernest/page": [
-                "./layout/page/src"
+            "@evernest/header": [
+                "./organisms/header/src"
+            ],
+            "@evernest/footer": [
+                "./organisms/footer/src"
             ],
             "@evernest/grid": [
                 "./layout/grid/src"
+            ],
+            "@evernest/page": [
+                "./layout/page/src"
             ]
         }
     },

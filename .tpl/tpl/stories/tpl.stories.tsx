@@ -4,10 +4,9 @@ import { withTests } from "@storybook/addon-jest";
 import { Meta, Story } from "@storybook/react";
 import { Tpl } from "../src";
 import results from "./tpl.testresults.json";
-import { Button } from "@evernest/button";
 
 const Template: Story = args => {
-	return <Button {...args} />;
+	return <Tpl {...args} />;
 };
 
 export const Simple = Template.bind({});

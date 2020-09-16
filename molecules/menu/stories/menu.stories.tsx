@@ -6,11 +6,7 @@ import { Menu } from "../src";
 import results from "./menu.testresults.json";
 
 export const Simple: Story = () => {
-	return (
-		<>
-			<Menu />
-		</>
-	);
+	return <Menu />;
 };
 
 const story: Meta = {

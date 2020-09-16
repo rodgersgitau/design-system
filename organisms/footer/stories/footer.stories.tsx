@@ -2,30 +2,28 @@ import React from "react";
 import { withWrapper } from "@evernest/dev-helpers";
 import { withTests } from "@storybook/addon-jest";
 import { Meta, Story } from "@storybook/react";
-import { HeaderLink } from "../src";
-import results from "./header-link.testresults.json";
+import { Footer } from "../src";
+import results from "./footer.testresults.json";
 
 const Template: Story = args => {
-	return <HeaderLink {...args} />;
+	return <Footer {...args} />;
 };
 
 export const Simple = Template.bind({});
 
 Simple.args = {
-	children: "I am a HeaderLink",
-	href: "#",
+	children: "I am a Footer",
 };
 
 const story: Meta = {
-	component: HeaderLink,
-	title: "Design System/Atoms/Header link",
+	component: Footer,
+	title: "Design System/Organisms/Footer",
 	decorators: [withTests({ results }), withWrapper()],
 	parameters: {
-		jest: ["header-link"],
+		jest: ["footer"],
 	},
 	argTypes: {
 		children: { control: "text" },
-		href: { control: "text" },
 		theme: { control: false },
 	},
 };
