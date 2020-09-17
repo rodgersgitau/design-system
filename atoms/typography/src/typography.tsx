@@ -6,28 +6,33 @@ import {
 	TypographyProps,
 	TypographyVariant,
 } from "./types";
+import { css } from "@emotion/core";
 
 export const StyledHeadline1 = styled.h1<RawStyledTypographyProps>`
 	font-family: var(--font-face-serif, serif);
+	font-weight: normal;
 	font-size: 55px;
 	line-height: 63px;
 `;
 export const StyledHeadline2 = styled.h2<RawStyledTypographyProps>`
 	font-family: var(--font-face-serif, serif);
+	font-weight: normal;
 	font-size: 36px;
 	line-height: 45px;
 `;
 export const StyledHeadline3 = styled.h3<RawStyledTypographyProps>`
 	font-family: var(--font-face-serif, serif);
+	font-weight: normal;
 	font-size: 24px;
 	line-height: 36px;
+	margin: 0 0 var(--spacing-xs);
 `;
 
 export const Body = styled.div<RawStyledTypographyProps>`
 	font-family: var(--font-face-sans-serif, sans-serif);
+	font-weight: lighter;
 	font-size: 16px;
 	line-height: 28px;
-	font-weight: lighter;
 `;
 
 const variants = {

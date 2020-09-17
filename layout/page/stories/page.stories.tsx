@@ -7,6 +7,7 @@ import { Column, Flex, Grid, GridOverlay, Row } from "@evernest/grid";
 import { Header } from "@evernest/header";
 import { HeaderLink } from "@evernest/header-link";
 import { Menu, MenuDirection } from "@evernest/menu";
+import { Typography, TypographyVariant } from "@evernest/typography";
 import { withTests } from "@storybook/addon-jest";
 import { Meta, Story } from "@storybook/react";
 import {
@@ -16,6 +17,16 @@ import {
 	PageWithStyles as Page,
 } from "../src";
 import results from "./page.testresults.json";
+import { Icon } from "@evernest/icon";
+import styled from "@emotion/styled";
+
+const IconGrid = styled.div`
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 24px);
+	grid-gap: 1.5rem;
+	grid-gap: 16px;
+	margin: var(--spacing-s) 0 0;
+`;
 
 export const PageLayout: Story = () => {
 	return (
@@ -47,7 +58,10 @@ export const PageLayout: Story = () => {
 					<Footer>
 						<Grid overflow>
 							<Row>
-								<Column l={4} raw>
+								<Column l={3} raw>
+									<Typography variant={TypographyVariant.h3}>
+										Section 3
+									</Typography>
 									<Menu
 										direction={MenuDirection.vertical}
 										aria-label="footer-navigation-1"
@@ -56,7 +70,10 @@ export const PageLayout: Story = () => {
 										<FooterLink href="#">Link 2</FooterLink>
 									</Menu>
 								</Column>
-								<Column l={4} raw>
+								<Column l={3} raw>
+									<Typography variant={TypographyVariant.h3}>
+										Section 3
+									</Typography>
 									<Menu
 										direction={MenuDirection.vertical}
 										aria-label="footer-navigation-2"
@@ -65,7 +82,10 @@ export const PageLayout: Story = () => {
 										<FooterLink href="#">Link 2</FooterLink>
 									</Menu>
 								</Column>
-								<Column l={4} raw>
+								<Column l={3} raw>
+									<Typography variant={TypographyVariant.h3}>
+										Section 3
+									</Typography>
 									<Menu
 										direction={MenuDirection.vertical}
 										aria-label="footer-navigation-3"
@@ -73,6 +93,21 @@ export const PageLayout: Story = () => {
 										<FooterLink href="#">Link 1</FooterLink>
 										<FooterLink href="#">Link 2</FooterLink>
 									</Menu>
+								</Column>
+								<Column l={3} raw>
+									<Typography variant={TypographyVariant.h3}>
+										Section 4
+									</Typography>
+									<Typography variant={TypographyVariant.body}>
+										This is a text-section.
+									</Typography>
+
+									<IconGrid>
+										<Icon icon="instagram" />
+										<Icon icon="instagram" />
+										<Icon icon="instagram" />
+										<Icon icon="instagram" />
+									</IconGrid>
 								</Column>
 							</Row>
 						</Grid>
