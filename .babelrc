@@ -3,7 +3,7 @@
 	"plugins": ["@babel/plugin-transform-runtime", "babel-plugin-emotion"],
 	"env": {
 		"test": {
-			"plugins": ["@babel/plugin-transform-modules-commonjs", "babel-plugin-istanbul", "babel-plugin-emotion"]
+			"plugins": ["@babel/plugin-transform-modules-commonjs", "babel-plugin-istanbul"]
 		}
 	}
 }
