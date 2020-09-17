@@ -8,7 +8,7 @@ test("Icon contains text", () => {
 			<Icon icon="instagram" />
 		</div>
 	);
-	expect(wrapper.find(Icon).text()).toEqual("Accessibility");
+	expect(wrapper.find(Icon).text()).toEqual("Instagram");
 });
 
 test("Icon allows setting classname", () => {
