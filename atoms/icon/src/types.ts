@@ -3,12 +3,11 @@ import React from "react";
 
 export enum Size {
 	medium = 24,
-	large = 48,
 }
 
 export type IconName = keyof IconCollection;
 
-export interface IconProps extends Pick<React.SVGAttributes<SVGSVGElement>, "className"> {
+export interface IconProps extends React.SVGAttributes<SVGSVGElement> {
 	icon: IconName;
 	size?: Size;
 }
