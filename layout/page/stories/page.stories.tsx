@@ -60,7 +60,7 @@ export const PageLayout: Story = () => {
 							<Row>
 								<Column l={3} raw>
 									<Typography variant={TypographyVariant.h3}>
-										Section 3
+										Section 1
 									</Typography>
 									<Menu
 										direction={MenuDirection.vertical}
@@ -68,11 +68,13 @@ export const PageLayout: Story = () => {
 									>
 										<FooterLink href="#">Link 1</FooterLink>
 										<FooterLink href="#">Link 2</FooterLink>
+										<FooterLink href="#">Link 3</FooterLink>
+										<FooterLink href="#">Link 4</FooterLink>
 									</Menu>
 								</Column>
 								<Column l={3} raw>
 									<Typography variant={TypographyVariant.h3}>
-										Section 3
+										Section 2
 									</Typography>
 									<Menu
 										direction={MenuDirection.vertical}
@@ -92,6 +94,9 @@ export const PageLayout: Story = () => {
 									>
 										<FooterLink href="#">Link 1</FooterLink>
 										<FooterLink href="#">Link 2</FooterLink>
+										<FooterLink href="#">Link 3</FooterLink>
+										<FooterLink href="#">Link 4</FooterLink>
+										<FooterLink href="#">Link 5</FooterLink>
 									</Menu>
 								</Column>
 								<Column l={3} raw>
@@ -101,12 +106,35 @@ export const PageLayout: Story = () => {
 									<Typography variant={TypographyVariant.body}>
 										This is a text-section.
 									</Typography>
+									<Typography variant={TypographyVariant.body}>
+										This is a text-section.
+									</Typography>
 
 									<IconGrid>
-										<Icon icon="instagram" />
-										<Icon icon="instagram" />
-										<Icon icon="instagram" />
-										<Icon icon="instagram" />
+										<a
+											href="https://www.instagram.com/evernest.official/"
+											target="_blank"
+										>
+											<Icon icon="instagram" />
+										</a>
+										<a
+											href="https://www.facebook.com/Evernest.Official"
+											target="_blank"
+										>
+											<Icon icon="facebook" />
+										</a>
+										<a
+											href="https://www.linkedin.com/company/42171409"
+											target="_blank"
+										>
+											<Icon icon="linkedIn" />
+										</a>
+										<a
+											href="https://www.xing.com/companies/evernest"
+											target="_blank"
+										>
+											<Icon icon="xing" />
+										</a>
 									</IconGrid>
 								</Column>
 							</Row>

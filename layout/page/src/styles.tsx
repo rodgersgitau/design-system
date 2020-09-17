@@ -19,6 +19,9 @@ export const globalStyles = css`
 	*::after {
 		box-sizing: border-box;
 	}
+	a {
+		color: currentColor;
+	}
 `;
 
 export const fontFaces = css`

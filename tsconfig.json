@@ -44,32 +44,32 @@
             "@evernest/evernest-logo": [
                 "./atoms/evernest-logo/src"
             ],
-            "@evernest/header-link": [
-                "./atoms/header-link/src"
-            ],
             "@evernest/footer-link": [
                 "./atoms/footer-link/src"
             ],
-            "@evernest/typography": [
-                "./atoms/typography/src"
+            "@evernest/header-link": [
+                "./atoms/header-link/src"
             ],
             "@evernest/icon": [
                 "./atoms/icon/src"
             ],
+            "@evernest/typography": [
+                "./atoms/typography/src"
+            ],
             "@evernest/menu": [
                 "./molecules/menu/src"
-            ],
-            "@evernest/header": [
-                "./organisms/header/src"
             ],
             "@evernest/footer": [
                 "./organisms/footer/src"
             ],
-            "@evernest/page": [
-                "./layout/page/src"
+            "@evernest/header": [
+                "./organisms/header/src"
             ],
             "@evernest/grid": [
                 "./layout/grid/src"
+            ],
+            "@evernest/page": [
+                "./layout/page/src"
             ]
         }
     },
