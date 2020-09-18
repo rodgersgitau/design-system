@@ -4,6 +4,7 @@ import React from "react";
 import { StyledMenuProps, MenuProps, MenuDirection } from "./types";
 
 export const StyledMenuTpl = styled.nav<StyledMenuProps>`
+	display: flex;
 	${({ direction }) => css`
 		flex-direction: ${direction === MenuDirection.vertical ? "column" : "row"};
 	`};

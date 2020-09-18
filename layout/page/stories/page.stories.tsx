@@ -29,6 +29,29 @@ const IconGrid = styled.div`
 	margin: var(--spacing-s) 0 0;
 `;
 
+const NavLink = styled.a`
+	display: block;
+	color: currentColor;
+	font-size: 20px;
+	line-height: 30px;
+	padding: var(--spacing-xxs) 24px;
+	font-weight: lighter;
+	text-decoration: none;
+`;
+
+const Separator = styled.span`
+	display: block;
+	color: currentColor;
+	height: 1px;
+	background: black;
+	margin: var(--header-height) 24px var(--spacing-xs);
+`;
+
+const HeaderContent = styled.div`
+	display: flex;
+	padding: 0 24px;
+`;
+
 export const PageLayout: Story = () => {
 	const [open, setOpen] = React.useState(false);
 	return (
@@ -43,7 +66,7 @@ export const PageLayout: Story = () => {
 									<Flex>
 										<EvernestLogo />
 										<Hidden l>
-											<Menu aria-label="header-navigation-1">
+											<Menu aria-label="desktop-navigation-1">
 												<HeaderLink href="#">Link 1</HeaderLink>
 												<HeaderLink href="#">Link 2</HeaderLink>
 												<HeaderLink href="#">Link 3</HeaderLink>
@@ -56,7 +79,7 @@ export const PageLayout: Story = () => {
 							</Row>
 						</Grid>
 					</Header>
-					<Hidden s>
+					<Hidden s m>
 						<Toggle
 							open={open}
 							onClick={() => {
@@ -65,13 +88,29 @@ export const PageLayout: Story = () => {
 						/>
 					</Hidden>
 				</HeaderArea>
-				<Panel
-					anchor={Anchor.left}
-					open={open}
-					onClose={() => {
-						setOpen(state => !state);
-					}}
-				></Panel>
+				<Hidden s m>
+					<Panel
+						anchor={Anchor.left}
+						open={open}
+						onClose={() => {
+							setOpen(state => !state);
+						}}
+					>
+						<Header>
+							<HeaderContent>
+								<EvernestLogo />
+							</HeaderContent>
+						</Header>
+						<Separator />
+						<Menu aria-label="mobile-navigation-1" direction={MenuDirection.vertical}>
+							<NavLink href="#">Link 1</NavLink>
+							<NavLink href="#">Link 2</NavLink>
+							<NavLink href="#">Link 3</NavLink>
+							<NavLink href="#">Link 4</NavLink>
+							<NavLink href="#">Link 5</NavLink>
+						</Menu>
+					</Panel>
+				</Hidden>
 				<MainArea />
 				<FooterArea>
 					<Footer>

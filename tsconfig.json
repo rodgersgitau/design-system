@@ -38,23 +38,23 @@
             "@evernest/tokens": [
                 "./ions/tokens/src"
             ],
+            "@evernest/evernest-logo": [
+                "./atoms/evernest-logo/src"
+            ],
             "@evernest/button": [
                 "./atoms/button/src"
             ],
             "@evernest/footer-link": [
                 "./atoms/footer-link/src"
             ],
-            "@evernest/evernest-logo": [
-                "./atoms/evernest-logo/src"
-            ],
-            "@evernest/typography": [
-                "./atoms/typography/src"
+            "@evernest/header-link": [
+                "./atoms/header-link/src"
             ],
             "@evernest/icon": [
                 "./atoms/icon/src"
             ],
-            "@evernest/header-link": [
-                "./atoms/header-link/src"
+            "@evernest/typography": [
+                "./atoms/typography/src"
             ],
             "@evernest/panel": [
                 "./molecules/panel/src"
@@ -62,11 +62,11 @@
             "@evernest/menu": [
                 "./molecules/menu/src"
             ],
-            "@evernest/header": [
-                "./organisms/header/src"
-            ],
             "@evernest/footer": [
                 "./organisms/footer/src"
+            ],
+            "@evernest/header": [
+                "./organisms/header/src"
             ],
             "@evernest/grid": [
                 "./layout/grid/src"

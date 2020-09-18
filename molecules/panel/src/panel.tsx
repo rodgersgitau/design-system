@@ -84,6 +84,7 @@ export const Panel = React.forwardRef<PanelProps, StyledPanelProps>(
 		const handleClick = React.useCallback(() => {
 			open && onClose();
 		}, [open, onClose]);
+		console.log(props);
 		return (
 			<>
 				<StyledBackdrop open={open} onClick={handleClick} />

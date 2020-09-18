@@ -14,9 +14,9 @@ export const StyledGrid = styled("div", {
 })<GridProps>`
 	display: flex;
 	flex-direction: column;
-	width: calc(100% - var(${GRID_PADDING}) * 2px);
-	margin-left: calc(var(${GRID_PADDING}) * 1px);
-	margin-right: calc(var(${GRID_PADDING}) * 1px);
+	width: calc(100% - (var(${GRID_PADDING}) + var(${GUTTER})) * 2px);
+	margin-left: calc((var(${GRID_PADDING}) + var(${GUTTER})) * 1px);
+	margin-right: calc((var(${GRID_PADDING}) + var(${GUTTER})) * 1px);
 	padding-left: calc(var(${PADDING}) * 1px);
 	padding-right: calc(var(${PADDING}) * 1px);
 	${({

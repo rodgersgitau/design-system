@@ -4,7 +4,7 @@ import { StyledHeaderProps, HeaderProps } from "./types";
 import { css } from "@emotion/core";
 
 export const StyledHeader = styled.div<StyledHeaderProps>`
-	height: inherit;
+	height: var(--header-height, inherit);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
