@@ -13,6 +13,7 @@ export const StyledBackdrop = styled.div<StyledBackdropProps>`
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
+	transition-duration: 0.3s;
 	transition-property: opacity, visibility;
 	${({ theme: { palette } }) =>
 		css`
@@ -30,6 +31,7 @@ export const StyledBackdrop = styled.div<StyledBackdropProps>`
 export const StyledPanel = styled.aside<StyledPanelProps>`
 	position: fixed;
 	z-index: 100;
+	transition-duration: 0.3s;
 	transition-property: transform;
 	overflow: auto;
 	${({ theme: { palette } }) => css`

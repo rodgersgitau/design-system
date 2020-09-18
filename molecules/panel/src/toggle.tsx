@@ -17,6 +17,8 @@ export const StyledBurgerBun = styled.span`
 	left: 50%;
 	margin: -1px -8px;
 	background: currentColor;
+	transition-duration: 0.3s;
+	transition-property: transform;
 `;
 
 const bunTransformation = {
