@@ -2,14 +2,13 @@ import { PropsWithTheme } from "@evernest/theme";
 
 export type HeaderElement = HTMLDivElement;
 
-export interface CommonHeaderProps {
-	fixed?: boolean;
-}
-
-export interface StyledHeaderProps extends PropsWithTheme<HeaderElement>, CommonHeaderProps {
+export interface StyledHeaderProps extends PropsWithTheme<HeaderElement> {
 	/** Add types */
+	plain?: boolean;
+	fixed?: boolean;
+	sticky?: boolean;
 }
 
-export interface HeaderProps extends HeaderElement, CommonHeaderProps {
+export interface HeaderProps extends HeaderElement {
 	/** Add types */
 }

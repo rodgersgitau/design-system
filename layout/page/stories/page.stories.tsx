@@ -7,6 +7,11 @@ import { Column, Flex, Grid, GridOverlay, Hidden, Row } from "@evernest/grid";
 import { Header } from "@evernest/header";
 import { HeaderLink } from "@evernest/header-link";
 import { Menu, MenuDirection } from "@evernest/menu";
+import { Icon } from "@evernest/icon";
+import styled from "@emotion/styled";
+import { Anchor, Panel, Toggle } from "@evernest/panel";
+import { PropsWithTheme } from "@evernest/theme";
+import { css } from "@emotion/core";
 import { Typography, TypographyVariant } from "@evernest/typography";
 import { withTests } from "@storybook/addon-jest";
 import { Meta, Story } from "@storybook/react";
@@ -17,14 +22,10 @@ import {
 	PageWithStyles as Page,
 } from "../src";
 import results from "./page.testresults.json";
-import { Icon } from "@evernest/icon";
-import styled from "@emotion/styled";
-import { Anchor, Panel, Toggle } from "@evernest/panel";
 
 const IconGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 24px);
-	grid-gap: 1.5rem;
 	grid-gap: 16px;
 	margin: var(--spacing-s) 0 0;
 `;
@@ -39,12 +40,23 @@ const NavLink = styled.a`
 	text-decoration: none;
 `;
 
-const Separator = styled.span`
+const Separator = styled.span<PropsWithTheme>`
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	display: block;
 	color: currentColor;
 	height: 1px;
-	background: black;
-	margin: var(--header-height) 24px var(--spacing-xs);
+	margin: 0 24px;
+	${({ theme: { palette } }) => css`
+		background: ${palette.brightGrey.css};
+	`};
+`;
+
+const Spacer = styled.span<PropsWithTheme>`
+	display: block;
+	height: var(--spacing-xs);
 `;
 
 const HeaderContent = styled.div`
@@ -96,12 +108,13 @@ export const PageLayout: Story = () => {
 							setOpen(state => !state);
 						}}
 					>
-						<Header>
+						<Header plain sticky>
 							<HeaderContent>
 								<EvernestLogo />
 							</HeaderContent>
+							<Separator />
 						</Header>
-						<Separator />
+						<Spacer />
 						<Menu aria-label="mobile-navigation-1" direction={MenuDirection.vertical}>
 							<NavLink href="#">Link 1</NavLink>
 							<NavLink href="#">Link 2</NavLink>

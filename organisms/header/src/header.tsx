@@ -12,10 +12,10 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
 	left: 0;
 	right: 0;
 	z-index: 100;
-	${({ theme: { palette }, fixed }) => css`
-		position: ${fixed ? "fixed" : "absolute"};
-		background: ${palette.darkGrey.css};
-		color: ${palette.white.css};
+	${({ theme: { palette }, fixed, plain, sticky }) => css`
+		position: ${fixed ? "fixed" : sticky ? "sticky" : "absolute"};
+		background: ${plain ? "inherit" : palette.darkGrey.css};
+		color: ${plain ? "currentColor" : palette.white.css};
 	`};
 `;
 

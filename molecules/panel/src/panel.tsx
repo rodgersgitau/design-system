@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import { css, Global } from "@emotion/core";
 import React from "react";
 import { Anchor, PanelProps, StyledBackdropProps, StyledPanelProps } from "./types";
 
@@ -31,6 +31,7 @@ export const StyledPanel = styled.aside<StyledPanelProps>`
 	position: fixed;
 	z-index: 100;
 	transition-property: transform;
+	overflow: auto;
 	${({ theme: { palette } }) => css`
 		background: ${palette.white.css};
 	`};
@@ -79,14 +80,21 @@ export const StyledPanel = styled.aside<StyledPanelProps>`
 	}};
 `;
 
+const blockScroll = css`
+	body {
+		overflow: hidden;
+		height: 100vh;
+	}
+`;
+
 export const Panel = React.forwardRef<PanelProps, StyledPanelProps>(
 	({ open, onClose, ...props }, ref) => {
 		const handleClick = React.useCallback(() => {
 			open && onClose();
 		}, [open, onClose]);
-		console.log(props);
 		return (
 			<>
+				{open && <Global styles={blockScroll} />}
 				<StyledBackdrop open={open} onClick={handleClick} />
 				<StyledPanel {...props} open={open} ref={ref} />
 			</>
