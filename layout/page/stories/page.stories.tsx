@@ -3,7 +3,7 @@ import { withWrapper } from "@evernest/dev-helpers";
 import { EvernestLogo } from "@evernest/evernest-logo";
 import { Footer } from "@evernest/footer";
 import { FooterLink } from "@evernest/footer-link";
-import { Column, Flex, Grid, GridOverlay, Row } from "@evernest/grid";
+import { Column, Flex, Grid, GridOverlay, Hidden, Row } from "@evernest/grid";
 import { Header } from "@evernest/header";
 import { HeaderLink } from "@evernest/header-link";
 import { Menu, MenuDirection } from "@evernest/menu";
@@ -19,6 +19,7 @@ import {
 import results from "./page.testresults.json";
 import { Icon } from "@evernest/icon";
 import styled from "@emotion/styled";
+import { Anchor, Panel, Toggle } from "@evernest/panel";
 
 const IconGrid = styled.div`
 	display: grid;
@@ -29,6 +30,7 @@ const IconGrid = styled.div`
 `;
 
 export const PageLayout: Story = () => {
+	const [open, setOpen] = React.useState(false);
 	return (
 		<>
 			<GridOverlay toggle />
@@ -40,19 +42,36 @@ export const PageLayout: Story = () => {
 								<Column raw>
 									<Flex>
 										<EvernestLogo />
-										<Menu aria-label="header-navigation-1">
-											<HeaderLink href="#">Link 1</HeaderLink>
-											<HeaderLink href="#">Link 2</HeaderLink>
-											<HeaderLink href="#">Link 3</HeaderLink>
-											<HeaderLink href="#">Link 4</HeaderLink>
-											<HeaderLink href="#">Link 5</HeaderLink>
-										</Menu>
+										<Hidden l>
+											<Menu aria-label="header-navigation-1">
+												<HeaderLink href="#">Link 1</HeaderLink>
+												<HeaderLink href="#">Link 2</HeaderLink>
+												<HeaderLink href="#">Link 3</HeaderLink>
+												<HeaderLink href="#">Link 4</HeaderLink>
+												<HeaderLink href="#">Link 5</HeaderLink>
+											</Menu>
+										</Hidden>
 									</Flex>
 								</Column>
 							</Row>
 						</Grid>
 					</Header>
+					<Hidden s>
+						<Toggle
+							open={open}
+							onClick={() => {
+								setOpen(state => !state);
+							}}
+						/>
+					</Hidden>
 				</HeaderArea>
+				<Panel
+					anchor={Anchor.left}
+					open={open}
+					onClose={() => {
+						setOpen(state => !state);
+					}}
+				></Panel>
 				<MainArea />
 				<FooterArea>
 					<Footer>

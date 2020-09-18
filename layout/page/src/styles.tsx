@@ -25,8 +25,10 @@ export const globalStyles = css`
 `;
 
 export const fontFaces = css`
-	--font-face-sans-serif: object_sans;
-	--font-face-serif: made_mirage;
+	:root {
+		--font-face-sans-serif: object_sans;
+		--font-face-serif: made_mirage;
+	}
 	@font-face {
 		font-family: "made_mirage";
 		src: url("/fonts/web/made_mirage_medium-webfont.woff2") format("woff2"),

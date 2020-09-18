@@ -11,6 +11,7 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
 	top: 0;
 	left: 0;
 	right: 0;
+	z-index: 100;
 	${({ theme: { palette }, fixed }) => css`
 		position: ${fixed ? "fixed" : "absolute"};
 		background: ${palette.darkGrey.css};

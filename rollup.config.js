@@ -46,7 +46,6 @@ module.exports = () => {
 			],
 		})),
 		...bins.map(bin => {
-			console.log(bin);
 			return {
 				input: `src/${bin}`.replace(".js", ".ts"),
 				external: [...Object.keys(pkg.dependencies || {}), "path", "fs"],

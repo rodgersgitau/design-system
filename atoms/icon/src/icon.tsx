@@ -17,7 +17,6 @@ const Path = styled.path`
 `;
 
 const Icon: React.FC<IconProps> = ({ className, icon, size }) => {
-	console.log(size);
 	return (
 		<Svg viewBox={`0 0 ${size} ${size}`} size={size} className={className}>
 			<title>{humanize(icon as string)}</title>

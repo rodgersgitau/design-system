@@ -6,7 +6,6 @@ import { css } from "@emotion/core";
 export const StyledFooterLink = styled.a<StyledFooterLinkProps>`
 	display: inline-flex;
 	width: max-content;
-	font-family: sans-serif;
 	color: currentColor;
 	text-decoration: none;
 	font-size: 16px;

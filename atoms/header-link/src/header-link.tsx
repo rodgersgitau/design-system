@@ -25,7 +25,6 @@ const StyledHeaderLink = styled.a<StyledHeaderLinkProps>`
 
 	position: relative;
 	display: inline-flex;
-	font-family: sans-serif;
 	color: currentColor;
 	text-decoration: none;
 	padding: var(--spacing-s) 10px;
