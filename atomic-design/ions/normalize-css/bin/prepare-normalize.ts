@@ -5,7 +5,7 @@ import pify from "pify";
 const { readFile, writeFile } = pify(fs);
 
 const outFile = path.resolve(__dirname, "../src/normalize-css.ts");
-const pathToModule = path.resolve(__dirname, "../../../node_modules/normalize.css");
+const pathToModule = path.resolve(__dirname, "../../../../node_modules/normalize.css");
 const pathToPkg = path.resolve(pathToModule, "package.json");
 const cleanRegexp = /\/\*[\s\S]*?\*\/|([^:]|^)\/\/.*$/gm;
 
