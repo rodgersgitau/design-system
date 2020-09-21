@@ -1,6 +1,6 @@
 import { withTests } from "@storybook/addon-jest";
 import React from "react";
-import { Icon, IconProps } from "../src";
+import { Icon, IconProps, Size } from "../src";
 import results from "./icon.testresults.json";
 import { Story } from "@storybook/react";
 import { withWrapper } from "@evernest/dev-helpers";
@@ -13,6 +13,7 @@ export const Simple = Template.bind({});
 
 Simple.args = {
 	icon: "instagram",
+	size: Size.medium,
 };
 
 const story = {
