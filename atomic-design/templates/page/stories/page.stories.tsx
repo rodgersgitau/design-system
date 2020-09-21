@@ -219,7 +219,7 @@ export const PageLayout: Story = () => {
 
 const story: Meta = {
 	component: Grid,
-	title: "Design System/Layout/Page",
+	title: "Design System/Templates/Page",
 	decorators: [withTests({ results }), withWrapper()],
 	parameters: {
 		jest: ["page"],

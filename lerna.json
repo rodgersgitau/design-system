@@ -5,7 +5,7 @@
     "atomic-design/ions/*",
     "atomic-design/molecules/*",
     "atomic-design/organisms/*",
-    "layout/*",
+    "atomic-design/templates/*",
     "utils/*"
   ],
   "useWorkspaces": true,

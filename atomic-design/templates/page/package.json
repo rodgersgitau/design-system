@@ -28,6 +28,8 @@
 		"react": "^16.13.1"
 	},
 	"devDependencies": {
-		"@evernest/dev-helpers": "^0.0.0"
+    "@evernest/dev-helpers": "^0.0.0",
+    "@evernest/header": "^0.0.0",
+    "@evernest/footer": "^0.0.0"
 	}
 }

@@ -27,7 +27,7 @@
                 "./utils/dev-helpers/src"
             ],
             "@evernest/icons": [
-                "./ions/icons/src"
+                "./atomic-design/ions/icons/src"
             ],
             "@evernest/normalize-css": [
                 "./atomic-design/ions/normalize-css/src"
@@ -39,40 +39,40 @@
                 "./atomic-design/ions/tokens/src"
             ],
             "@evernest/button": [
-                "./atoms/button/src"
+                "./atomic-design/atoms/button/src"
             ],
             "@evernest/evernest-logo": [
                 "./atomic-design/atoms/evernest-logo/src"
             ],
-            "@evernest/icon": [
-                "./atomic-design/atoms/icon/src"
+            "@evernest/footer-link": [
+                "./atomic-design/atoms/footer-link/src"
             ],
             "@evernest/header-link": [
                 "./atomic-design/atoms/header-link/src"
             ],
-            "@evernest/footer-link": [
-                "./atomic-design/atoms/footer-link/src"
+            "@evernest/icon": [
+                "./atomic-design/atoms/icon/src"
             ],
             "@evernest/typography": [
                 "./atomic-design/atoms/typography/src"
             ],
             "@evernest/menu": [
-                "./molecules/menu/src"
+                "./atomic-design/molecules/menu/src"
             ],
             "@evernest/panel": [
                 "./atomic-design/molecules/panel/src"
             ],
             "@evernest/footer": [
-                "./organisms/footer/src"
+                "./atomic-design/organisms/footer/src"
+            ],
+            "@evernest/grid": [
+                "./atomic-design/organisms/grid/src"
             ],
             "@evernest/header": [
                 "./atomic-design/organisms/header/src"
             ],
-            "@evernest/grid": [
-                "./layout/grid/src"
-            ],
             "@evernest/page": [
-                "./atomic-design/layout/page/src"
+                "./atomic-design/templates/page/src"
             ]
         }
     },

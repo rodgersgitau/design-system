@@ -29,7 +29,7 @@ module.exports = {
 		...makeAlias("atoms", packages.atoms, true),
 		...makeAlias("molecules", packages.molecules, true),
 		...makeAlias("organisms", packages.organisms, true),
-		...makeAlias("layout", packages.layout),
+		...makeAlias("templates", packages.templates, true),
 	},
 	transformIgnorePatterns: [
 		"node_modules/(?!(jest-)?react-native|react-(native|universal|navigation)-(.*)|@react-native-community/(.*)|@react-navigation/(.*)|bs-platform)",

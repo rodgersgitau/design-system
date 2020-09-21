@@ -185,7 +185,7 @@ export const Nesting: React.FC = () => {
 
 const story: Meta = {
 	component: Grid,
-	title: "Design System/Layout/Grid",
+	title: "Design System/Organisms/Grid",
 	decorators: [withTests({ results }), withWrapper()],
 	parameters: {
 		jest: ["grid"],

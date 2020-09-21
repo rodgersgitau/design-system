@@ -39,7 +39,7 @@ module.exports = {
 							"@babel/preset-typescript",
 							"@babel/preset-react",
 						],
-						plugins: ["babel-plugin-emotion"],
+						plugins: ["@babel/plugin-transform-runtime", "babel-plugin-emotion"],
 					},
 				},
 				{
@@ -59,8 +59,9 @@ module.exports = {
 			...makeAlias("atoms", packages.atoms, true),
 			...makeAlias("molecules", packages.molecules, true),
 			...makeAlias("organisms", packages.organisms, true),
-			...makeAlias("layout", packages.layout),
+			...makeAlias("templates", packages.templates, true),
 		};
+		console.log(config.resolve.alias);
 		config.resolve.extensions.push(".ts", ".tsx");
 		return config;
 	},
