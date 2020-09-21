@@ -112,10 +112,11 @@ dist
 
 # Fix ignores
 # Not sure why we need this but we do!!
-!atoms/icon
+!atomic-design/atoms/icon
 
 # build dir
 build
+storybook-static
 
 # tests
 *.testresults.json
