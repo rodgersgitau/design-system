@@ -17,15 +17,6 @@ function makeAlias(dir, names, atomic = false) {
 	);
 }
 
-console.log({
-	...makeAlias("utils", packages.utils),
-	...makeAlias("ions", packages.ions, true),
-	...makeAlias("atoms", packages.atoms, true),
-	...makeAlias("molecules", packages.molecules, true),
-	...makeAlias("organisms", packages.organisms, true),
-	...makeAlias("layout", packages.layout),
-});
-
 module.exports = {
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 	modulePathIgnorePatterns: ["/dist/"],

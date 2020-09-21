@@ -29,11 +29,11 @@
             "@evernest/icons": [
                 "./ions/icons/src"
             ],
-            "@evernest/theme": [
-                "./atomic-design/ions/theme/src"
-            ],
             "@evernest/normalize-css": [
                 "./atomic-design/ions/normalize-css/src"
+            ],
+            "@evernest/theme": [
+                "./atomic-design/ions/theme/src"
             ],
             "@evernest/tokens": [
                 "./atomic-design/ions/tokens/src"
@@ -47,11 +47,11 @@
             "@evernest/icon": [
                 "./atomic-design/atoms/icon/src"
             ],
-            "@evernest/footer-link": [
-                "./atomic-design/atoms/footer-link/src"
-            ],
             "@evernest/header-link": [
                 "./atomic-design/atoms/header-link/src"
+            ],
+            "@evernest/footer-link": [
+                "./atomic-design/atoms/footer-link/src"
             ],
             "@evernest/typography": [
                 "./atomic-design/atoms/typography/src"
