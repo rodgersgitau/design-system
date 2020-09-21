@@ -7,12 +7,12 @@
 		"email": "gregor.adams@evernest.com"
 	},
 	"workspaces": [
-		"atoms/*",
-		"ions/*",
+		"atomic-design/atoms/*",
+		"atomic-design/ions/*",
+    "atomic-design/molecules/*",
+    "atomic-design/organisms/*",
     "layout/*",
-    "molecules/*",
-		"organisms/*",
-		"utils/*"
+    "utils/*"
 	],
 	"scripts": {
 		"add-component": "babel-node bin/add-component.ts --extensions='.ts'",

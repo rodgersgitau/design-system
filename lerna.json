@@ -1,11 +1,11 @@
 {
   "npmClient": "yarn",
   "packages": [
-    "atoms/*",
-    "ions/*",
+    "atomic-design/atoms/*",
+    "atomic-design/ions/*",
+    "atomic-design/molecules/*",
+    "atomic-design/organisms/*",
     "layout/*",
-    "molecules/*",
-    "organisms/*",
     "utils/*"
   ],
   "useWorkspaces": true,

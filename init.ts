@@ -5,11 +5,11 @@ import fs from "fs";
 
 const writeFile = pify(fs.writeFile);
 
-function makeAlias(dir, names) {
+function makeAlias(dir: string, names: string[], atomic?: boolean): Record<string, string> {
 	return names.reduce(
-		(previousValue, name) => ({
+		(previousValue, name, atomic) => ({
 			...previousValue,
-			[`@evernest/${name}`]: [`./${dir}/${name}/src`],
+			[`@evernest/${name}`]: [`./${atomic ? "atomic-design/" : ""}${dir}/${name}/src`],
 		}),
 		{}
 	);
@@ -24,11 +24,19 @@ function getLastDir(pathName: string): string {
 }
 
 async function getNames() {
-	const atoms = (await globby("./atoms/*/package.json")).map(item => getLastDir(item));
-	const ions = (await globby("./ions/*/package.json")).map(item => getLastDir(item));
+	const atoms = (await globby("./atomic-design/atoms/*/package.json")).map(item =>
+		getLastDir(item)
+	);
+	const ions = (await globby("./atomic-design/ions/*/package.json")).map(item =>
+		getLastDir(item)
+	);
 	const layout = (await globby("./layout/*/package.json")).map(item => getLastDir(item));
-	const molecules = (await globby("./molecules/*/package.json")).map(item => getLastDir(item));
-	const organisms = (await globby("./organisms/*/package.json")).map(item => getLastDir(item));
+	const molecules = (await globby("./atomic-design/molecules/*/package.json")).map(item =>
+		getLastDir(item)
+	);
+	const organisms = (await globby("./atomic-design/organisms/*/package.json")).map(item =>
+		getLastDir(item)
+	);
 	const utils = (await globby("./utils/*/package.json")).map(item => getLastDir(item));
 	return { atoms, ions, layout, molecules, organisms, utils };
 }
@@ -46,10 +54,10 @@ getNames().then(async names => {
 					...tsconfig.compilerOptions,
 					paths: {
 						...makeAlias("utils", names.utils),
-						...makeAlias("ions", names.ions),
-						...makeAlias("atoms", names.atoms),
-						...makeAlias("molecules", names.molecules),
-						...makeAlias("organisms", names.organisms),
+						...makeAlias("ions", names.ions, true),
+						...makeAlias("atoms", names.atoms, true),
+						...makeAlias("molecules", names.molecules, true),
+						...makeAlias("organisms", names.organisms, true),
 						...makeAlias("layout", names.layout),
 					},
 				},

@@ -1,15 +1,30 @@
 const path = require("path");
 const packages = require("./package-names.json");
 
-function makeAlias(dir, names) {
+function makeAlias(dir, names, atomic = false) {
 	return names.reduce(
 		(previousValue, name) => ({
 			...previousValue,
-			[`^@evernest/${name}`]: path.resolve(__dirname, `./${dir}/${name}/src`),
+			[`^@evernest/${name}`]: path.resolve(
+				__dirname,
+				atomic ? "atomic-design" : "",
+				dir,
+				name,
+				"src"
+			),
 		}),
 		{}
 	);
 }
+
+console.log({
+	...makeAlias("utils", packages.utils),
+	...makeAlias("ions", packages.ions, true),
+	...makeAlias("atoms", packages.atoms, true),
+	...makeAlias("molecules", packages.molecules, true),
+	...makeAlias("organisms", packages.organisms, true),
+	...makeAlias("layout", packages.layout),
+});
 
 module.exports = {
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
@@ -19,10 +34,10 @@ module.exports = {
 	testEnvironment: "enzyme",
 	moduleNameMapper: {
 		...makeAlias("utils", packages.utils),
-		...makeAlias("ions", packages.ions),
-		...makeAlias("atoms", packages.atoms),
-		...makeAlias("molecules", packages.molecules),
-		...makeAlias("organisms", packages.organisms),
+		...makeAlias("ions", packages.ions, true),
+		...makeAlias("atoms", packages.atoms, true),
+		...makeAlias("molecules", packages.molecules, true),
+		...makeAlias("organisms", packages.organisms, true),
 		...makeAlias("layout", packages.layout),
 	},
 	transformIgnorePatterns: [
