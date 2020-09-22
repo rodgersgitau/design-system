@@ -61,7 +61,6 @@ module.exports = {
 			...makeAlias("organisms", packages.organisms, true),
 			...makeAlias("templates", packages.templates, true),
 		};
-		console.log(config.resolve.alias);
 		config.resolve.extensions.push(".ts", ".tsx");
 		return config;
 	},
