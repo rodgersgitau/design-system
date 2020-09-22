@@ -12,7 +12,3 @@ export interface StyledEvernestLogoProps extends PropsWithTheme<EvernestLogoElem
 	/** Add types */
 	size?: LogoSize;
 }
-
-export interface EvernestLogoProps extends EvernestLogoElement {
-	/** Add types */
-}

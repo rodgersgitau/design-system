@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { StyledHeaderLinkProps, HeaderLinkProps } from "./types";
+import { StyledHeaderLinkProps, HeaderLinkElement } from "./types";
 import { PropsWithTheme } from "@evernest/theme";
 import { css } from "@emotion/core";
 
@@ -39,7 +39,7 @@ const StyledHeaderLink = styled.a<StyledHeaderLinkProps>`
 	}
 `;
 
-export const HeaderLink = React.forwardRef<HeaderLinkProps, StyledHeaderLinkProps>(
+export const HeaderLink = React.forwardRef<HeaderLinkElement, StyledHeaderLinkProps>(
 	({ children, ...props }, ref) => (
 		<StyledHeaderLink {...props} ref={ref}>
 			<StyledHighlight />

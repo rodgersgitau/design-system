@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { StyledFooterLinkProps, FooterLinkProps } from "./types";
+import { StyledFooterLinkProps, FooterLinkElement } from "./types";
 import { css } from "@emotion/core";
 
 export const StyledFooterLink = styled.a<StyledFooterLinkProps>`
@@ -19,6 +19,6 @@ export const StyledFooterLink = styled.a<StyledFooterLinkProps>`
 	}
 `;
 
-export const FooterLink = React.forwardRef<FooterLinkProps, StyledFooterLinkProps>((props, ref) => (
-	<StyledFooterLink {...props} ref={ref} />
-));
+export const FooterLink = React.forwardRef<FooterLinkElement, StyledFooterLinkProps>(
+	(props, ref) => <StyledFooterLink {...props} ref={ref} />
+);

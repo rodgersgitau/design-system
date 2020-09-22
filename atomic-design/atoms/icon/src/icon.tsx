@@ -4,24 +4,20 @@ import humanize from "humanize-string";
 import React from "react";
 import { IconProps, Size } from "./types";
 
-const Svg = styled("svg", {
-	shouldForwardProp: prop => prop !== "size",
-})<Pick<IconProps, "size">>`
-	height: 1em;
-	width: 1em;
-	font-size: ${({ size }) => `${size}px`};
+const StyledSvg = styled.svg`
+	fill: currentColor;
 `;
 
-const Path = styled.path`
+const StyledPath = styled.path`
 	fill: currentColor;
 `;
 
 const Icon: React.FC<IconProps> = ({ className, icon, size }) => {
 	return (
-		<Svg viewBox={`0 0 ${size} ${size}`} size={size} className={className}>
+		<StyledSvg viewBox={`0 0 ${size} ${size}`} height={size} width={size} className={className}>
 			<title>{humanize(icon as string)}</title>
-			<Path d={icons[size][icon]} />
-		</Svg>
+			<StyledPath d={icons[size][icon]} />
+		</StyledSvg>
 	);
 };
 

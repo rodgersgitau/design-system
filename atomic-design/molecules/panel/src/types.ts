@@ -23,15 +23,7 @@ export interface StyledBackdropProps extends PropsWithTheme {
 	open?: boolean;
 }
 
-export interface PanelProps extends PanelElement {
-	/** Add types */
-}
-
 export interface StyledToggleProps extends PropsWithTheme<ToggleElement> {
 	/** Add types */
 	open?: boolean;
-}
-
-export interface ToggleProps extends ToggleElement {
-	/** Add types */
 }

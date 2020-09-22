@@ -11,7 +11,3 @@ export interface StyledMenuProps extends PropsWithTheme<MenuElement> {
 	/** Add types */
 	direction?: MenuDirection;
 }
-
-export interface MenuProps extends MenuElement {
-	/** Add types */
-}

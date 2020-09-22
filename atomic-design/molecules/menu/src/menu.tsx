@@ -1,7 +1,7 @@
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import React from "react";
-import { StyledMenuProps, MenuProps, MenuDirection } from "./types";
+import { StyledMenuProps, MenuElement, MenuDirection } from "./types";
 
 export const StyledMenuTpl = styled.nav<StyledMenuProps>`
 	display: flex;
@@ -10,6 +10,6 @@ export const StyledMenuTpl = styled.nav<StyledMenuProps>`
 	`};
 `;
 
-export const Menu = React.forwardRef<MenuProps, StyledMenuProps>((props, ref) => (
+export const Menu = React.forwardRef<MenuElement, StyledMenuProps>((props, ref) => (
 	<StyledMenuTpl {...props} ref={ref} />
 ));

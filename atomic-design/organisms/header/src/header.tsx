@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { StyledHeaderProps, HeaderProps } from "./types";
+import { StyledHeaderProps, HeaderElement } from "./types";
 import { css } from "@emotion/core";
 
 export const StyledHeader = styled.div<StyledHeaderProps>`
@@ -19,6 +19,6 @@ export const StyledHeader = styled.div<StyledHeaderProps>`
 	`};
 `;
 
-export const Header = React.forwardRef<HeaderProps, StyledHeaderProps>((props, ref) => (
+export const Header = React.forwardRef<HeaderElement, StyledHeaderProps>((props, ref) => (
 	<StyledHeader {...props} ref={ref} />
 ));

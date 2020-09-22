@@ -1,7 +1,7 @@
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import React from "react";
-import { StyledFooterProps, FooterProps } from "./types";
+import { FooterElement, StyledFooterProps } from "./types";
 
 export const StyledFooter = styled.div<StyledFooterProps>`
 	padding: var(--spacing-xl) 0;
@@ -11,6 +11,6 @@ export const StyledFooter = styled.div<StyledFooterProps>`
 	`};
 `;
 
-export const Footer = React.forwardRef<FooterProps, StyledFooterProps>((props, ref) => (
+export const Footer = React.forwardRef<FooterElement, StyledFooterProps>((props, ref) => (
 	<StyledFooter {...props} ref={ref} />
 ));

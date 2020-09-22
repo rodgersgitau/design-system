@@ -8,7 +8,3 @@ export interface StyledHeaderLinkProps
 		React.AnchorHTMLAttributes<HeaderLinkElement> {
 	/** Add types */
 }
-
-export interface HeaderLinkProps extends HeaderLinkElement {
-	/** Add types */
-}

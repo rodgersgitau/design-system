@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { EvernestLogoProps, LogoSize, StyledEvernestLogoProps } from "./types";
+import { EvernestLogoElement, LogoSize, StyledEvernestLogoProps } from "./types";
 import { css } from "@emotion/core";
 
 const LogoL = props => {
@@ -49,7 +49,7 @@ export const StyledEvernestLogo = styled.span<StyledEvernestLogoProps>`
 	display: inline-flex;
 `;
 
-export const EvernestLogo = React.forwardRef<EvernestLogoProps, StyledEvernestLogoProps>(
+export const EvernestLogo = React.forwardRef<EvernestLogoElement, StyledEvernestLogoProps>(
 	({ children, size, ...props }, ref) => {
 		switch (size) {
 			case LogoSize.small:

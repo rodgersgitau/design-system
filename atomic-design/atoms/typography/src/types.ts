@@ -19,7 +19,3 @@ export interface StyledTypographyProps extends RawStyledTypographyProps {
 	variant?: TypographyVariant;
 	component?: keyof JSX.IntrinsicElements;
 }
-
-export interface TypographyProps extends TypographyElement {
-	/** Add types */
-}

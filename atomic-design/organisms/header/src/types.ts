@@ -8,7 +8,3 @@ export interface StyledHeaderProps extends PropsWithTheme<HeaderElement> {
 	fixed?: boolean;
 	sticky?: boolean;
 }
-
-export interface HeaderProps extends HeaderElement {
-	/** Add types */
-}

@@ -8,7 +8,3 @@ export interface StyledFooterLinkProps
 		React.AnchorHTMLAttributes<FooterLinkElement> {
 	/** Add types */
 }
-
-export interface FooterLinkProps extends FooterLinkElement {
-	/** Add types */
-}

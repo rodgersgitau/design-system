@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { ToggleProps, StyledToggleProps } from "./types";
+import { ToggleElement, StyledToggleProps } from "./types";
 import { css } from "@emotion/core";
 
 export const StyledBurgerWrapper = styled.div`
@@ -78,7 +78,7 @@ export const HiddenText = styled.span`
 	opacity: 0;
 `;
 
-export const Toggle = React.forwardRef<ToggleProps, StyledToggleProps>(
+export const Toggle = React.forwardRef<ToggleElement, StyledToggleProps>(
 	({ children, open, ...props }, ref) => (
 		<StyledToggle {...props} open={open} ref={ref}>
 			<Burger open={open} />

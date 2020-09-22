@@ -29,7 +29,10 @@ export const Page = styled.div<PropsWithTheme>`
 	`};
 `;
 
-export const PageWithStyles: React.FC<PropsWithTheme> = ({ children, className }) => (
+export const PageWithStyles: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+	children,
+	className,
+}) => (
 	<>
 		<Normalize />
 		<GlobalStyles />
@@ -38,7 +41,10 @@ export const PageWithStyles: React.FC<PropsWithTheme> = ({ children, className }
 	</>
 );
 
-export const ThemedPageWithStyles: React.FC<PropsWithTheme> = ({ children, className }) => (
+export const ThemedPageWithStyles: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+	children,
+	className,
+}) => (
 	<ThemeProvider theme={theme}>
 		<PageWithStyles className={className}>{children}</PageWithStyles>
 	</ThemeProvider>

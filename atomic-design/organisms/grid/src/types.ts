@@ -49,18 +49,6 @@ export interface GridOverlayProps extends GridOverlayGridProps {
 	toggle?: boolean;
 }
 
-export interface ViewportSize {
-	m: boolean;
-	mu: boolean;
-	l: boolean;
-	lu: boolean;
-	xl: boolean;
-}
-
-export interface GridContextConfig extends GridConfig {
-	viewport: ViewportSize;
-}
-
 export interface GridContextProps {
 	grid: GridConfig;
 }

@@ -3,10 +3,9 @@ import React from "react";
 import {
 	RawStyledTypographyProps,
 	StyledTypographyProps,
-	TypographyProps,
+	TypographyElement,
 	TypographyVariant,
 } from "./types";
-import { css } from "@emotion/core";
 
 export const StyledHeadline1 = styled.h1<RawStyledTypographyProps>`
 	font-family: var(--font-face-serif, serif);
@@ -42,7 +41,7 @@ const variants = {
 	[TypographyVariant.body]: Body,
 };
 
-export const Typography = React.forwardRef<TypographyProps, StyledTypographyProps>(
+export const Typography = React.forwardRef<TypographyElement, StyledTypographyProps>(
 	({ variant, component, ...props }, ref) => {
 		const Variant = React.useMemo(() => (variant ? variants[variant] : Body), [variant]);
 		const Component = React.useMemo(

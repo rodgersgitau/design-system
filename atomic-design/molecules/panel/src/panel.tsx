@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { css, Global } from "@emotion/core";
 import React from "react";
-import { Anchor, PanelProps, StyledBackdropProps, StyledPanelProps } from "./types";
+import { Anchor, PanelElement, StyledBackdropProps, StyledPanelProps } from "./types";
 
 export const StyledBackdrop = styled.div<StyledBackdropProps>`
 	position: fixed;
@@ -89,7 +89,7 @@ const blockScroll = css`
 	}
 `;
 
-export const Panel = React.forwardRef<PanelProps, StyledPanelProps>(
+export const Panel = React.forwardRef<PanelElement, StyledPanelProps>(
 	({ open, onClose, ...props }, ref) => {
 		const handleClick = React.useCallback(() => {
 			open && onClose();
