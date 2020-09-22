@@ -52,7 +52,7 @@ async function createComponent(name, { atomic }) {
 	const humanName = humanizeString(name);
 	const cwd = process.cwd();
 	const tpl = path.join(cwd, ".tpl/tpl");
-	const dir = path.join(cwd, atomic, paramName);
+	const dir = path.join(cwd, "atomic-design", atomic, paramName);
 	const filesToCopy = [
 		{ origin: path.join(tpl, "index.js"), destination: path.join(dir, "index.js") },
 		{ origin: path.join(tpl, "jest.config.js"), destination: path.join(dir, "jest.config.js") },
