@@ -35,6 +35,7 @@ const {
 const patterns = {
 	tpl: /tpl/gm,
 	Tpl: /Tpl/gm,
+	raw: /\{TPL\}/gm,
 	human: /\{tpl\}/gm,
 	type: /\{type\}/gm,
 };
@@ -68,6 +69,7 @@ async function createComponent(name, { atomic }) {
 	const index = await readFile(path.join(tpl, "src/index.ts"), "utf8");
 	const test = await readFile(path.join(tpl, "__tests__/tpl.tsx"), "utf8");
 	const story = await readFile(path.join(tpl, "stories/tpl.stories.tsx"), "utf8");
+	const readme = await readFile(path.join(tpl, "README.md"), "utf8");
 
 	const files: Files = {
 		pkg: {
@@ -97,6 +99,10 @@ async function createComponent(name, { atomic }) {
 				.replace(patterns.type, pascalcase(atomic))
 				.replace(patterns.Tpl, pascalName)
 				.replace(patterns.tpl, paramName),
+		},
+		readme: {
+			path: path.join(dir, "README.md"),
+			content: readme.replace(patterns.raw, name),
 		},
 	};
 	await Promise.all(
