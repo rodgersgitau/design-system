@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[142],{873:function(module,exports,__webpack_require__){module.exports=__webpack_require__(3)("biL7")}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_xquery.0b2619571fd4129c9877.bundle.js.map
