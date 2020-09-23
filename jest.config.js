@@ -19,7 +19,7 @@ function makeAlias(dir, names, atomic = false) {
 
 module.exports = {
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-	modulePathIgnorePatterns: ["/dist/"],
+	modulePathIgnorePatterns: ["/dist/", ".tpl"],
 	verbose: false,
 	setupFilesAfterEnv: ["jest-enzyme"],
 	testEnvironment: "enzyme",
