@@ -45,7 +45,7 @@ jobs:
 
       - name: 🔂 Surge PR Preview
         uses: afc163/surge-preview@v1
-          with:
-            surge_token: ${{ secrets.SURGE_TOKEN }}
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            dist: ./storybook-static
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dist: ./storybook-static
