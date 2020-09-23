@@ -1,0 +1,38 @@
+name: Pull Request Deployment
+
+on:
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  tests:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout working branch
+        uses: actions/checkout@v1
+
+      - name: Set up Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.18.0
+
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: 🔂 Surge PR Preview
+        uses: afc163/surge-preview@v1
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          build: yarn predeploy
+          dist: ./storybook-static
