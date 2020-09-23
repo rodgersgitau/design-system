@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[42],{773:function(module,exports,__webpack_require__){module.exports=__webpack_require__(3)("iSiV")}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_gherkin.4625a72a706edd464f97.bundle.js.map
