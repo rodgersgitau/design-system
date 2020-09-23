@@ -34,5 +34,7 @@ jobs:
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          build: yarn predeploy
+          build: |
+            yarn install
+            yarn predeploy
           dist: ./storybook-static
