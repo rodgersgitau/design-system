@@ -39,3 +39,13 @@ jobs:
         run: bash <(curl -Ls https://coverage.codacy.com/get.sh)
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
+      - name: Predeploy
+        run: yarn predeploy
+
+      - name: 🔂 Surge PR Preview
+        uses: afc163/surge-preview@v1
+          with:
+            surge_token: ${{ secrets.SURGE_TOKEN }}
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            dist: ./storybook-static
