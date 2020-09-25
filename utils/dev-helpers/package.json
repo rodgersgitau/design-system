@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/dev-helpers",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -34,7 +34,7 @@
 		"watch": "rollup -cw"
 	},
 	"dependencies": {
-		"@evernest/theme": "^0.0.0"
+		"@evernest/theme": "^0.0.1"
 	},
 	"devDependencies": {
 		"@emotion/core": "^10.0.35",
