@@ -1,16 +1,10 @@
 import React from "react";
 import { withWrapper } from "@evernest/dev-helpers";
-import { EvernestLogo } from "@evernest/evernest-logo";
 import { Footer } from "@evernest/footer";
-import { FooterLink } from "@evernest/footer-link";
-import { Column, Flex, Grid, GridOverlay, Hidden, Row } from "@evernest/grid";
+import { Hidden } from "@evernest/grid";
 import { Header } from "@evernest/header";
-import { HeaderLink } from "@evernest/header-link";
-import { Menu, MenuDirection } from "@evernest/menu";
-import { Icon, Size } from "@evernest/icon";
-import styled from "@emotion/styled";
+import { ClassNames } from "@emotion/core";
 import { Anchor, Panel, Toggle } from "@evernest/panel";
-import { Typography, TypographyVariant } from "@evernest/typography";
 import { Meta, Story } from "@storybook/react";
 import {
 	Footer as FooterArea,
@@ -22,7 +16,6 @@ import {
 export const PageLayout: Story = () => {
 	return (
 		<>
-			<GridOverlay toggle />
 			<Page>
 				<HeaderArea>
 					<Header fixed />
@@ -36,11 +29,81 @@ export const PageLayout: Story = () => {
 	);
 };
 
+export const WithTranslucentHeader: Story = () => {
+	return (
+		<ClassNames>
+			{({ css, cx }) => (
+				<Page
+					className={css`
+						--header-height-ref: 0;
+					`}
+				>
+					<HeaderArea>
+						<Hidden s m>
+							<Header fixed translucent fadeOffset={200} />
+						</Hidden>
+						<Hidden l>
+							<Header fixed />
+						</Hidden>
+					</HeaderArea>
+					<MainArea>
+						<img
+							src="//images.ctfassets.net/vij0xfkj6nfm/65B2DBSyhcTksD4H9nuGds/a3be81862610240ee35085e63835f531/007-web-1000px.jpg"
+							alt="placeholder image"
+							style={{ width: "100%", height: "100vh", objectFit: "cover" }}
+						/>
+						<div style={{ height: "100vh" }} />
+					</MainArea>
+					<FooterArea>
+						<Footer />
+					</FooterArea>
+				</Page>
+			)}
+		</ClassNames>
+	);
+};
+
+export const WithResponsiveTranslucentHeader: Story = () => {
+	return (
+		<ClassNames>
+			{({ css, theme }) => (
+				<Page
+					className={css`
+						--header-height-ref: 0;
+						@media ${theme.mq.l} {
+							--header-height-ref: var(--header-height);
+						}
+					`}
+				>
+					<HeaderArea>
+						<Hidden s m>
+							<Header fixed translucent fadeOffset={200} />
+						</Hidden>
+						<Hidden l>
+							<Header fixed />
+						</Hidden>
+					</HeaderArea>
+					<MainArea>
+						<img
+							src="//images.ctfassets.net/vij0xfkj6nfm/65B2DBSyhcTksD4H9nuGds/a3be81862610240ee35085e63835f531/007-web-1000px.jpg"
+							alt="placeholder image"
+							style={{ width: "100%", height: "100vh", objectFit: "cover" }}
+						/>
+						<div style={{ height: "100vh" }} />
+					</MainArea>
+					<FooterArea>
+						<Footer />
+					</FooterArea>
+				</Page>
+			)}
+		</ClassNames>
+	);
+};
+
 export const WithMobileMenu: Story = () => {
 	const [open, setOpen] = React.useState(false);
 	return (
 		<>
-			<GridOverlay toggle />
 			<Page>
 				<HeaderArea>
 					<Header fixed />
@@ -72,7 +135,7 @@ export const WithMobileMenu: Story = () => {
 };
 
 const story: Meta = {
-	component: Grid,
+	component: Page,
 	title: "Design System/Templates/Page",
 	decorators: [withWrapper()],
 	parameters: {
