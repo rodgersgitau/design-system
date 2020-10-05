@@ -1,13 +1,18 @@
-import { Wrapper, createTree } from "@evernest/dev-helpers";
+import { createTree, Wrapper } from "@evernest/dev-helpers";
 import { mount } from "enzyme";
 import React from "react";
-import { Accordion, AccordionProps, StyledPanel, StyledButton } from "../src";
+import { Accordion, AccordionProps, StyledButton, StyledPanel } from "../src";
+import MockedResizeObserver from "../__mocks__/resize-observer";
 
 const WrappedAccordion: React.FC<AccordionProps> = props => (
 	<Wrapper>
 		<Accordion {...props} />
 	</Wrapper>
 );
+
+beforeAll(() => {
+	window.ResizeObserver = MockedResizeObserver;
+});
 
 test("Accordion renders title", () => {
 	const text = "Title";
@@ -23,8 +28,17 @@ test("Accordion renders children", () => {
 	expect(wrapper.find(StyledPanel).text()).toEqual(text);
 });
 
-test("Accordion matches snapshot", () => {
+test("Accordion with title matches snapshot ", () => {
 	const closed = createTree(<WrappedAccordion title="Title">content</WrappedAccordion>);
+	expect(closed).toMatchSnapshot();
+});
+
+test("Accordion with springConfig matches snapshot", () => {
+	const closed = createTree(
+		<WrappedAccordion title="Title" springConfig={{ friction: 3, mass: 4 }}>
+			content
+		</WrappedAccordion>
+	);
 	expect(closed).toMatchSnapshot();
 });
 
@@ -33,8 +47,8 @@ test("Accordion prop 'expanded' toggles on click", () => {
 	const button = wrapper.find(StyledButton);
 
 	button.simulate("click");
-	expect(wrapper.find(StyledPanel).props().expanded).toEqual(true);
+	expect(wrapper.find(StyledButton).props()["aria-expanded"]).toEqual(true);
 
 	button.simulate("click");
-	expect(wrapper.find(StyledPanel).props().expanded).toEqual(false);
+	expect(wrapper.find(StyledButton).props()["aria-expanded"]).toEqual(false);
 });

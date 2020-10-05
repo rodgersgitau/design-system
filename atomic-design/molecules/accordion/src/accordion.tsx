@@ -1,60 +1,68 @@
-import { Icon, Size } from "@evernest/icon";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
+import { Icon, Size } from "@evernest/icon";
 import React from "react";
+import { animated, useSpring } from "react-spring";
 import { v4 as uuid } from "uuid";
+import { AccordionElement, AccordionProps, StyledAccordionProps } from "./types";
+import useMeasure from "./use-measure";
 
-import {
-	AccordionProps,
-	StyledAccordionProps,
-	StyledButtonProps,
-	StyledPanelProps,
-	AccordionElement,
-} from "./types";
-
+/* @todo: revisit border style with token refactor */
 export const StyledAccordion = styled("div", {
 	shouldForwardProp: (propName: string) => !["theme"].includes(propName),
 })<StyledAccordionProps>`
 	${({ theme: { palette } }) => css`
-		color: ${palette.white.css};
 		border-bottom: 1px solid ${palette.brightGrey.css};
 	`};
 `;
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styled.button`
 	appearance: none;
 	background: none;
-	border: none;
 	border-radius: 0;
+	border: none;
 	color: currentColor;
 	font-family: inherit;
 	font-size: inherit;
-	padding: 0;
+	padding: 0 0 var(--spacing-xs);
 	width: 100%;
 `;
 
 export const StyledInnerButtonWrapper = styled.div`
 	align-items: center;
 	display: flex;
-	justify-content: space-between;
 	height: 100%;
+	justify-content: space-between;
 `;
 
-export const StyledPanel = styled.div<StyledPanelProps>`
+export const StyledPanel = styled.div`
 	padding-bottom: var(--spacing-xs);
-	${({ expanded }) => css`
-		display: ${expanded ? "block" : "none"};
-	`};
+`;
+
+export const StyledAnimatedPanelWrapper = styled(animated.div)`
+	overflow: hidden;
 `;
 
 export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
-	({ children, title, headerComponent, ...props }, ref) => {
+	({ children, title, headerComponent, springConfig, ...props }, ref) => {
 		const [expanded, setExpanded] = React.useState(false);
 
 		const handleClick = () => setExpanded(!expanded);
 
 		const buttonId = React.useMemo(() => uuid(), []);
 		const panelId = `${buttonId}-panel`;
+
+		const [
+			useMeasureRef,
+			{
+				borderBoxSize: { blockSize: styledPanelHeight },
+			},
+		] = useMeasure();
+
+		const springProps = useSpring({
+			config: springConfig,
+			height: expanded ? styledPanelHeight : 0,
+		});
 
 		const HeaderComponent = React.useMemo(() => headerComponent, [headerComponent]);
 
@@ -69,18 +77,24 @@ export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 					>
 						<StyledInnerButtonWrapper>
 							<span data-test-id="styled-inner-button-wrapper-label">{title}</span>
-							<Icon aria-hidden="true" size={Size.medium} icon="chevronDown" />
+							<Icon
+								aria-hidden="true"
+								icon={expanded ? "chevronUp" : "chevronDown"}
+								size={Size.medium}
+							/>
 						</StyledInnerButtonWrapper>
 					</StyledButton>
 				</HeaderComponent>
-				<StyledPanel
-					aria-labelledby={buttonId}
-					expanded={expanded}
-					id={panelId}
-					role="region"
-				>
-					{children}
-				</StyledPanel>
+				<StyledAnimatedPanelWrapper style={springProps}>
+					<StyledPanel
+						ref={useMeasureRef}
+						aria-labelledby={buttonId}
+						id={panelId}
+						role="region"
+					>
+						{children}
+					</StyledPanel>
+				</StyledAnimatedPanelWrapper>
 			</StyledAccordion>
 		);
 	}
@@ -88,4 +102,5 @@ export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 
 Accordion.defaultProps = {
 	headerComponent: "div",
+	springConfig: undefined,
 };

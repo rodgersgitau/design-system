@@ -1,26 +1,58 @@
-import React from "react";
-import { withWrapper } from "@evernest/dev-helpers";
+import { withWrapper, ColorBox } from "@evernest/dev-helpers";
+import { theme } from "@evernest/theme";
+import { Typography, TypographyVariant } from "@evernest/typography";
 import { Meta, Story } from "@storybook/react";
+import React from "react";
 import { Accordion, StyledAccordionProps } from "../src";
 
+const ExampleAccordionContent = (
+	<div>
+		<p>Some content that is now visible.</p>
+		<ul>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+		</ul>
+	</div>
+);
+
 const Template: Story<StyledAccordionProps> = args => {
-	return <Accordion title={args.title} {...args} />;
+	return (
+		<ColorBox background={theme.palette.darkGrey.css} color={theme.palette.white.css}>
+			<Accordion title={args.title} {...args} />
+		</ColorBox>
+	);
 };
 
 const MultipleTemplate: Story = ({ items }) => {
-	return items.map((args, i) => <Accordion key={i} title={args.title} {...args} />);
+	return items.map((args, i) => <Template key={i} {...args} />);
 };
 
 export const Simple = Template.bind({});
-export const Multiple = MultipleTemplate.bind({});
-
 Simple.args = {
 	title: "Heading",
-	children: <p>Some content that is now visible.</p>,
+	children: ExampleAccordionContent,
 };
 
+export const Multiple = MultipleTemplate.bind({});
 Multiple.args = {
-	items: [Simple.args, Simple.args],
+	items: [
+		{
+			title: "Heading",
+			children: ExampleAccordionContent,
+		},
+		{
+			title: "Another Heading",
+			children: ExampleAccordionContent,
+		},
+	],
+};
+
+export const WithHeaderComponent = Template.bind({});
+WithHeaderComponent.args = {
+	title: "Heading",
+	children: ExampleAccordionContent,
+	headerComponent: props => <Typography {...props} variant={TypographyVariant.h4} />,
 };
 
 const story: Meta = {
@@ -28,7 +60,6 @@ const story: Meta = {
 	title: "Design System/Molecules/Accordion",
 	decorators: [withWrapper()],
 	parameters: {
-		backgrounds: { default: "dark" },
 		jest: ["accordion"],
 	},
 	argTypes: {
