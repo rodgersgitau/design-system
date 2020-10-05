@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/evernest-logo",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -36,13 +36,13 @@
 	"dependencies": {
 		"@emotion/core": "^10.0.35",
 		"@emotion/styled": "^10.0.27",
-		"@evernest/theme": "^0.0.4",
-		"@evernest/tokens": "^0.0.4",
+		"@evernest/theme": "^0.0.5",
+		"@evernest/tokens": "^0.0.5",
 		"@types/react": "^16.9.49",
 		"react": "^16.13.1"
 	},
 	"devDependencies": {
-		"@evernest/dev-helpers": "^0.0.4"
+		"@evernest/dev-helpers": "^0.0.5"
 	},
 	"publishConfig": {
 		"access": "public"

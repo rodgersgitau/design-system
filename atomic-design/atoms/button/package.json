@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/button",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -34,13 +34,13 @@
 		"test:watch": "jest --watch --coverage"
 	},
 	"dependencies": {
-		"@evernest/theme": "^0.0.4",
-		"@evernest/tokens": "^0.0.4"
+		"@evernest/theme": "^0.0.5",
+		"@evernest/tokens": "^0.0.5"
 	},
 	"devDependencies": {
 		"@emotion/core": "^10.0.35",
 		"@emotion/styled": "^10.0.27",
-		"@evernest/dev-helpers": "^0.0.4",
+		"@evernest/dev-helpers": "^0.0.5",
 		"@types/react": "^16.9.49",
 		"react": "^16.13.1"
 	},
