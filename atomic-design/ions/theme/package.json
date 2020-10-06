@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/theme",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -32,7 +32,7 @@
 		"watch": "rollup -cw"
 	},
 	"dependencies": {
-		"@evernest/tokens": "^0.0.5"
+		"@evernest/tokens": "^0.0.6"
 	},
 	"publishConfig": {
 		"access": "public"

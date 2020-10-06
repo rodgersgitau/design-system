@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/accordion",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -36,9 +36,9 @@
 		"test:watch": "jest --watch --coverage"
 	},
 	"dependencies": {
-		"@evernest/icon": "^0.0.5",
-		"@evernest/theme": "^0.0.5",
-		"@evernest/tokens": "^0.0.5",
+		"@evernest/icon": "^0.0.6",
+		"@evernest/theme": "^0.0.6",
+		"@evernest/tokens": "^0.0.6",
 		"react-spring": "^8.0.27",
 		"react-use": "^15.3.4",
 		"uuid": "^8.3.0"
@@ -46,7 +46,7 @@
 	"devDependencies": {
 		"@emotion/core": "^10.0.35",
 		"@emotion/styled": "^10.0.27",
-		"@evernest/dev-helpers": "^0.0.5",
+		"@evernest/dev-helpers": "^0.0.6",
 		"@types/react": "^16.9.48",
 		"@types/uuid": "^8.3.0",
 		"react": "^16.13.1"
