@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/page",
-	"version": "0.0.7",
+	"version": "0.1.0",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -33,16 +33,16 @@
 		"test:watch": "jest --watch --coverage"
 	},
 	"dependencies": {
-		"@evernest/normalize-css": "^0.0.7",
-		"@evernest/theme": "^0.0.7",
-		"@evernest/tokens": "^0.0.7"
+		"@evernest/normalize-css": "^0.1.0",
+		"@evernest/theme": "^0.1.0",
+		"@evernest/tokens": "^0.1.0"
 	},
 	"devDependencies": {
 		"@emotion/core": "^10.0.35",
 		"@emotion/styled": "^10.0.27",
-		"@evernest/dev-helpers": "^0.0.7",
-		"@evernest/footer": "^0.0.7",
-		"@evernest/header": "^0.0.7",
+		"@evernest/dev-helpers": "^0.1.0",
+		"@evernest/footer": "^0.1.0",
+		"@evernest/header": "^0.1.0",
 		"@types/react": "^16.9.49",
 		"emotion-theming": "^10.0.27",
 		"react": "^16.13.1"

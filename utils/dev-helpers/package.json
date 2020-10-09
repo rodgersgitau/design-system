@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/dev-helpers",
-	"version": "0.0.7",
+	"version": "0.1.0",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -34,7 +34,7 @@
 		"watch": "rollup -cw"
 	},
 	"dependencies": {
-		"@evernest/theme": "^0.0.7",
+		"@evernest/theme": "^0.1.0",
 		"react-test-renderer": "^16.13.1"
 	},
 	"devDependencies": {

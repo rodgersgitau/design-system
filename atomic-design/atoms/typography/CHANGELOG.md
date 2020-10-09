@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/everdevs/design-system/compare/v0.0.7...v0.1.0) (2020-10-09)
+
+
+### Features
+
+* **typography:** style adjustments ([#27](https://github.com/everdevs/design-system/issues/27)) ([6f538a2](https://github.com/everdevs/design-system/commit/6f538a2d3ae52b9fa64deae69e17901661c7175f))
+
+
+
+
+
 ## [0.0.7](https://github.com/everdevs/design-system/compare/v0.0.6...v0.0.7) (2020-10-06)
 
 **Note:** Version bump only for package @evernest/typography

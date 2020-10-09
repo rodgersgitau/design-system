@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/everdevs/design-system/compare/v0.0.7...v0.1.0) (2020-10-09)
+
+**Note:** Version bump only for package @evernest/footer
+
+
+
+
+
 ## [0.0.7](https://github.com/everdevs/design-system/compare/v0.0.6...v0.0.7) (2020-10-06)
 
 **Note:** Version bump only for package @evernest/footer
