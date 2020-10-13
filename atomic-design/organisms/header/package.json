@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/header",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -37,7 +37,7 @@
 	"devDependencies": {
 		"@emotion/core": "^10.0.35",
 		"@emotion/styled": "^10.0.27",
-		"@evernest/dev-helpers": "^0.1.0",
+		"@evernest/dev-helpers": "^0.1.1",
 		"@types/react": "^16.9.49",
 		"react": "^16.13.1",
 		"react-use": "^15.3.4"

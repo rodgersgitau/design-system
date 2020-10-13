@@ -1,6 +1,6 @@
 {
 	"name": "@evernest/evernest-logo",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"keywords": [
 		"a11y",
 		"component library",
@@ -42,7 +42,7 @@
 		"react": "^16.13.1"
 	},
 	"devDependencies": {
-		"@evernest/dev-helpers": "^0.1.0"
+		"@evernest/dev-helpers": "^0.1.1"
 	},
 	"publishConfig": {
 		"access": "public"
