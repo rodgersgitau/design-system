@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/everdevs/design-system/compare/v0.1.1...v0.2.0) (2020-10-15)
+
+**Note:** Version bump only for package @evernest/theme
+
+
+
+
+
 # [0.1.0](https://github.com/everdevs/design-system/compare/v0.0.7...v0.1.0) (2020-10-09)
 
 **Note:** Version bump only for package @evernest/theme

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/everdevs/design-system/compare/v0.1.1...v0.2.0) (2020-10-15)
+
+
+### Features
+
+* **grid:** allow adding className to GridOverlay ([#32](https://github.com/everdevs/design-system/issues/32)) ([36e377c](https://github.com/everdevs/design-system/commit/36e377c93b282976ec6e22e3eb2b4a538ccdc224))
+
+
+
+
+
 ## [0.1.1](https://github.com/everdevs/design-system/compare/v0.1.0...v0.1.1) (2020-10-13)
 
 **Note:** Version bump only for package @evernest/grid
