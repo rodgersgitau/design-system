@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/everdevs/design-system/compare/v0.3.0...v0.3.1) (2020-10-30)
+
+
+### Bug Fixes
+
+* **header:** opacity fix for header ([#36](https://github.com/everdevs/design-system/issues/36)) ([6942e19](https://github.com/everdevs/design-system/commit/6942e19a0a51579953f52b9fdbd0944572c9252f))
+
+
+
+
+
 # [0.3.0](https://github.com/everdevs/design-system/compare/v0.2.0...v0.3.0) (2020-10-16)
 
 **Note:** Version bump only for package @evernest/header
