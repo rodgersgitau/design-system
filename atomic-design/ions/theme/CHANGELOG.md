@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/everdevs/design-system/compare/v0.3.2...v0.4.0) (2020-11-18)
+
+
+### Features
+
+* **theme:** add backgroundGrey ([#59](https://github.com/everdevs/design-system/issues/59)) ([fb67937](https://github.com/everdevs/design-system/commit/fb67937329ce6a0bc287784c09a3e5021389eb65))
+
+
+
+
+
 # [0.3.0](https://github.com/everdevs/design-system/compare/v0.2.0...v0.3.0) (2020-10-16)
 
 
