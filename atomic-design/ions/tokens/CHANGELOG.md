@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/everdevs/design-system/compare/v0.4.2...v0.5.0) (2020-11-23)
+
+
+### Features
+
+* **theme:** adjust grey colour ([#62](https://github.com/everdevs/design-system/issues/62)) ([06baced](https://github.com/everdevs/design-system/commit/06baceda33281aeacada49d386e6e57efab9bd40))
+
+
+
+
+
 ## [0.4.1](https://github.com/everdevs/design-system/compare/v0.4.0...v0.4.1) (2020-11-18)
 
 **Note:** Version bump only for package @evernest/tokens
