@@ -43,7 +43,7 @@
 		"dev": "yarn storybook",
 		"postinstall": "babel-node bin/fix-husky.ts --extensions='.ts'",
 		"lint": "yarn stylelint",
-		"ncu": "ncu -u; yarn lerna exec 'ncu -u -x \"/^@evernest/.*$/\"'",
+		"ncu": "ncu -t minor -u; yarn lerna exec 'ncu -t minor -u -x \"/^@evernest/.*$/\"'",
 		"prettier": "prettier 'atomic-design/{atoms,ions,molecules,organisms}/**/*.[jt]s(x)?' 'utils/**/*.[jt]s(x)?'",
 		"prettier:tsconfig": "prettier '**/tsconfig.json' --write",
 		"prepublish": "yarn build",
