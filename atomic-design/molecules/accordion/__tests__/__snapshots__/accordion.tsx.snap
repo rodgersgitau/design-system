@@ -16,28 +16,41 @@ exports[`Accordion with springConfig matches snapshot 1`] = `
         onClick={[Function]}
       >
         <div
-          className="css-hqn8lg"
+          className="css-1jbt2pi"
         >
+          <div
+            className="css-151dbik"
+          >
+            <span
+              className="css-1mmv0yt"
+              style={
+                Object {
+                  "transform": "rotate3d(0,0,1,0turn)",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="css-1mvn3rv"
+                height={24}
+                viewBox="0 0 24 24"
+                width={24}
+              >
+                <title>
+                  Close
+                </title>
+                <path
+                  className="css-1mvn3rv"
+                  d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+                />
+              </svg>
+            </span>
+          </div>
           <span
             data-test-id="styled-inner-button-wrapper-label"
           >
             Title
           </span>
-          <svg
-            aria-hidden="true"
-            className="css-1mvn3rv"
-            height={24}
-            viewBox="0 0 24 24"
-            width={24}
-          >
-            <title>
-              Chevron down
-            </title>
-            <path
-              className="css-1mvn3rv"
-              d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-            />
-          </svg>
         </div>
       </button>
     </div>
@@ -51,7 +64,7 @@ exports[`Accordion with springConfig matches snapshot 1`] = `
     >
       <div
         aria-labelledby="test-id"
-        className="css-15kpvws"
+        className="css-53qqi3"
         id="test-id-panel"
         role="region"
       >
@@ -78,28 +91,41 @@ exports[`Accordion with title matches snapshot  1`] = `
         onClick={[Function]}
       >
         <div
-          className="css-hqn8lg"
+          className="css-1jbt2pi"
         >
+          <div
+            className="css-151dbik"
+          >
+            <span
+              className="css-1mmv0yt"
+              style={
+                Object {
+                  "transform": "rotate3d(0,0,1,0turn)",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="css-1mvn3rv"
+                height={24}
+                viewBox="0 0 24 24"
+                width={24}
+              >
+                <title>
+                  Close
+                </title>
+                <path
+                  className="css-1mvn3rv"
+                  d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+                />
+              </svg>
+            </span>
+          </div>
           <span
             data-test-id="styled-inner-button-wrapper-label"
           >
             Title
           </span>
-          <svg
-            aria-hidden="true"
-            className="css-1mvn3rv"
-            height={24}
-            viewBox="0 0 24 24"
-            width={24}
-          >
-            <title>
-              Chevron down
-            </title>
-            <path
-              className="css-1mvn3rv"
-              d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-            />
-          </svg>
         </div>
       </button>
     </div>
@@ -113,7 +139,7 @@ exports[`Accordion with title matches snapshot  1`] = `
     >
       <div
         aria-labelledby="test-id"
-        className="css-15kpvws"
+        className="css-53qqi3"
         id="test-id-panel"
         role="region"
       >
