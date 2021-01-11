@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Accordion with springConfig matches snapshot 1`] = `
+exports[`Accordion renders with dark 1`] = `
 <div
   className="css-1mo6rv1"
 >
   <div
-    className="css-dq2y9"
+    className="css-11ph2lp"
+    dark={true}
   >
     <div>
       <button
@@ -19,7 +20,8 @@ exports[`Accordion with springConfig matches snapshot 1`] = `
           className="css-1jbt2pi"
         >
           <div
-            className="css-151dbik"
+            className="css-1b4t3rd"
+            dark={true}
           >
             <span
               className="css-1mmv0yt"
@@ -64,7 +66,84 @@ exports[`Accordion with springConfig matches snapshot 1`] = `
     >
       <div
         aria-labelledby="test-id"
-        className="css-53qqi3"
+        className="css-1kchnz3"
+        id="test-id-panel"
+        role="region"
+      >
+        content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion with springConfig matches snapshot 1`] = `
+<div
+  className="css-1mo6rv1"
+>
+  <div
+    className="css-1l9i93m"
+    dark={false}
+  >
+    <div>
+      <button
+        aria-controls="test-id-panel"
+        aria-expanded={false}
+        className="css-1h9i0hj"
+        id="test-id"
+        onClick={[Function]}
+      >
+        <div
+          className="css-1jbt2pi"
+        >
+          <div
+            className="css-nlltu0"
+            dark={false}
+          >
+            <span
+              className="css-1mmv0yt"
+              style={
+                Object {
+                  "transform": "rotate3d(0,0,1,0turn)",
+                }
+              }
+            >
+              <svg
+                aria-hidden="true"
+                className="css-1mvn3rv"
+                height={24}
+                viewBox="0 0 24 24"
+                width={24}
+              >
+                <title>
+                  Close
+                </title>
+                <path
+                  className="css-1mvn3rv"
+                  d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
+                />
+              </svg>
+            </span>
+          </div>
+          <span
+            data-test-id="styled-inner-button-wrapper-label"
+          >
+            Title
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      className="css-zlrsjy"
+      style={
+        Object {
+          "height": 0,
+        }
+      }
+    >
+      <div
+        aria-labelledby="test-id"
+        className="css-1kchnz3"
         id="test-id-panel"
         role="region"
       >
@@ -80,7 +159,8 @@ exports[`Accordion with title matches snapshot  1`] = `
   className="css-1mo6rv1"
 >
   <div
-    className="css-dq2y9"
+    className="css-1l9i93m"
+    dark={false}
   >
     <div>
       <button
@@ -94,7 +174,8 @@ exports[`Accordion with title matches snapshot  1`] = `
           className="css-1jbt2pi"
         >
           <div
-            className="css-151dbik"
+            className="css-nlltu0"
+            dark={false}
           >
             <span
               className="css-1mmv0yt"
@@ -139,7 +220,7 @@ exports[`Accordion with title matches snapshot  1`] = `
     >
       <div
         aria-labelledby="test-id"
-        className="css-53qqi3"
+        className="css-1kchnz3"
         id="test-id-panel"
         role="region"
       >

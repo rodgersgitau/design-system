@@ -5,14 +5,14 @@ import { PropsWithTheme } from "@evernest/theme";
 import React from "react";
 import { animated, useSpring } from "react-spring";
 import { useMeasure } from "react-use";
-import { AccordionElement, AccordionProps, StyledAccordionProps } from "./types";
+import { AccordionElement, AccordionProps, StyledAccordionProps, StyledPanelProps } from "./types";
 
 /* @todo: revisit border style with token refactor */
 export const StyledAccordion = styled("div", {
 	shouldForwardProp: (propName: string) => !["theme"].includes(propName),
-})<StyledAccordionProps>`
-	${({ theme: { palette } }) => css`
-		border-bottom: 1px solid ${palette.brightGrey.css};
+})<StyledAccordionProps & { dark: boolean }>`
+	${({ theme: { palette }, dark }) => css`
+		border-bottom: 1px solid ${dark ? palette.white.css : palette.grey.css};
 	`};
 `;
 
@@ -35,10 +35,19 @@ export const StyledInnerButtonWrapper = styled.div`
 	text-align: left;
 `;
 
-export const StyledPanel = styled.div<PropsWithTheme>`
+export const StyledPanel = styled.div<StyledPanelProps>`
 	padding-bottom: var(--spacing-xs);
 	padding-left: var(--spacing-s);
-	${({ theme: { mq } }) => css`
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+
+	${({ theme: { mq }, expanded }) => css`
+		visibility: ${expanded ? "visible" : "hidden"};
 		@media ${mq.l} {
 			padding-left: var(--spacing-m);
 		}
@@ -49,10 +58,11 @@ export const StyledAnimatedPanelWrapper = styled(animated.div)`
 	overflow: hidden;
 `;
 
-export const StyledIconWrapper = styled(animated.div)<PropsWithTheme>`
+export const StyledIconWrapper = styled(animated.div)<PropsWithTheme & { dark: boolean }>`
 	display: inline-flex;
 	min-width: var(--spacing-s);
-	${({ theme: { mq } }) => css`
+	${({ theme: { mq, palette }, dark }) => css`
+		color: ${dark ? palette.white.css : palette.grey.css};
 		@media ${mq.l} {
 			min-width: var(--spacing-m);
 		}
@@ -64,7 +74,7 @@ export const StyledAnimatedIconWrapper = styled(animated.span)`
 `;
 
 export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
-	({ id, children, title, headerComponent, springConfig, ...props }, ref) => {
+	({ id, children, dark, title, headerComponent, springConfig, ...props }, ref) => {
 		const [expanded, setExpanded] = React.useState(false);
 		const [panelBottomPadding, setPanelBottomPadding] = React.useState(0);
 
@@ -96,7 +106,7 @@ export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 		const HeaderComponent = React.useMemo(() => headerComponent, [headerComponent]);
 
 		return (
-			<StyledAccordion {...props} ref={ref}>
+			<StyledAccordion {...props} dark={dark} ref={ref}>
 				<HeaderComponent>
 					<StyledButton
 						aria-controls={panelId}
@@ -105,7 +115,7 @@ export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 						onClick={handleClick}
 					>
 						<StyledInnerButtonWrapper>
-							<StyledIconWrapper>
+							<StyledIconWrapper dark={dark}>
 								<StyledAnimatedIconWrapper
 									style={{
 										transform: z.interpolate(
@@ -122,6 +132,7 @@ export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 				</HeaderComponent>
 				<StyledAnimatedPanelWrapper style={springPanelProps}>
 					<StyledPanel
+						expanded={expanded}
 						ref={useMeasureRef}
 						aria-labelledby={id}
 						id={panelId}
@@ -136,6 +147,7 @@ export const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 );
 
 Accordion.defaultProps = {
+	dark: false,
 	headerComponent: "div",
 	springConfig: undefined,
 };
