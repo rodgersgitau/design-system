@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/everdevs/design-system/compare/v0.5.5...v0.5.6) (2021-01-12)
+
+
+### Bug Fixes
+
+* **accordion:** visibility ([#92](https://github.com/everdevs/design-system/issues/92)) ([4fe916b](https://github.com/everdevs/design-system/commit/4fe916b8a271c0089637997f539670564990ee0f))
+
+
+
+
+
 ## [0.5.5](https://github.com/everdevs/design-system/compare/v0.5.4...v0.5.5) (2021-01-11)
 
 **Note:** Version bump only for package @evernest/accordion
