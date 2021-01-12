@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/everdevs/design-system/compare/v0.5.6...v0.5.7) (2021-01-12)
+
+
+### Bug Fixes
+
+* **accordion:** don't stretch wrapper ([#93](https://github.com/everdevs/design-system/issues/93)) ([7b73761](https://github.com/everdevs/design-system/commit/7b737611ca497a0118fa56ed63acf82177f9ebcc))
+
+
+
+
+
 ## [0.5.6](https://github.com/everdevs/design-system/compare/v0.5.5...v0.5.6) (2021-01-12)
 
 
