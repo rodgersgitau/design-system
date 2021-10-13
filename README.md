@@ -40,6 +40,8 @@ yarn setup
 
 ### Test
 
+**Tests are broken since [updating to Emotion 11 (PR link)](https://github.com/everdevs/design-system/pull/94)** 
+
 We use [Jest](https://jestjs.io/) with [Enzyme](https://enzymejs.github.io/enzyme/) for testing.
 
 Tests can be run in each package (add required scripts to your package). Per default you can run
@@ -78,3 +80,14 @@ After adding a new package, run `yarn bootstrap` to link it.
 [coverage-badge]: https://img.shields.io/codacy/coverage/860c9800f40a4d438de3e5e7241de72f?style=for-the-badge
 [grade-badge]: https://img.shields.io/codacy/grade/860c9800f40a4d438de3e5e7241de72f?style=for-the-badge
 [codacy]: https://app.codacy.com/gh/everdevs/design-system/dashboard
+
+
+### Releasing
+1. Create a new branch and develop your changes
+    - `yarn dev` for local storybook
+2. Push branch and create PR (no need to edit versions or anything)
+   - _Test step will fail - broken after emotion 11 upgrade)_
+3. Merge approved PR to `master`
+4. Pull `master` locally
+5. Run `npm login` and log in with your npm credentials (you’ll need to have been added to the Evernest org on npm)
+6. Run `yarn release`, which will update versions, release packages on npm, and push a release tag commit to Github
