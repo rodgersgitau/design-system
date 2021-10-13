@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.8](https://github.com/everdevs/design-system/compare/v0.5.7...v0.5.8) (2021-10-13)
+
+**Note:** Version bump only for package @evernest/normalize-css
+
+
+
+
+
 # [0.5.0](https://github.com/everdevs/design-system/compare/v0.4.2...v0.5.0) (2020-11-23)
 
 **Note:** Version bump only for package @evernest/normalize-css

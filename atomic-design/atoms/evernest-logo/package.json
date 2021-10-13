@@ -1,6 +1,6 @@
 {
   "name": "@evernest/evernest-logo",
-  "version": "0.5.3",
+  "version": "0.5.8",
   "keywords": [
     "a11y",
     "component library",
@@ -34,14 +34,14 @@
     "test:watch": "jest --watch --coverage"
   },
   "dependencies": {
-    "@evernest/theme": "^0.5.3",
-    "@evernest/tokens": "^0.5.3"
+    "@evernest/theme": "^0.5.8",
+    "@evernest/tokens": "^0.5.8"
   },
   "devDependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@evernest/dev-helpers": "^0.5.3",
+    "@evernest/dev-helpers": "^0.5.8",
     "@types/react": "^17.0.9",
     "react": "^17.0.2"
   },
