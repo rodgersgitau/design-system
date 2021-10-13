@@ -27,7 +27,7 @@ export const StyledHeaderBackground = styled.div<StyledHeaderProps>`
 	left: 0;
 	z-index: 0;
 	${({ theme: { palette }, plain }) => css`
-		background: ${plain ? "inherit" : palette.darkGrey.css};
+		background: ${plain ? "inherit" : palette.black.css};
 	`};
 `;
 export const StyledHeaderContent = styled.div<PropsWithTheme>`

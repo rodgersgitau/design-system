@@ -6,7 +6,7 @@ import { FooterElement, StyledFooterProps } from "./types";
 export const StyledFooter = styled.div<StyledFooterProps>`
 	padding: var(--spacing-xl) 0;
 	${({ theme: { palette } }) => css`
-		background: ${palette.darkGrey.css};
+		background: ${palette.black.css};
 		color: ${palette.white.css};
 	`};
 `;
