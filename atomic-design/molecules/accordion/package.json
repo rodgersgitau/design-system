@@ -1,6 +1,6 @@
 {
   "name": "@evernest/accordion",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "keywords": [
     "a11y",
     "component library",
@@ -36,7 +36,7 @@
     "test:watch": "jest --watch --coverage"
   },
   "dependencies": {
-    "@evernest/icon": "^0.5.8",
+    "@evernest/icon": "^0.5.9",
     "@evernest/theme": "^0.5.8",
     "@evernest/tokens": "^0.5.8",
     "react-spring": "^9.2.1",
@@ -46,7 +46,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "@evernest/dev-helpers": "^0.5.8",
+    "@evernest/dev-helpers": "^0.5.9",
     "@types/react": "^17.0.9",
     "react": "^17.0.2"
   },
