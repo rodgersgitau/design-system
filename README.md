@@ -57,6 +57,9 @@ yarn test
 
 ### Add new packages (atomic components)
 
+> The template in .tpl/tpl needs to be adjusted to emotion 11 changes before new components
+> can be added
+
 Adding new packages can be a tedious task of copy & paste followed by renaming of files and
 identifiers. To make it easier to create new packages we added a script that does the job for you.
 It is similar to `lerna create <package-name>` but uses a custom template instead.

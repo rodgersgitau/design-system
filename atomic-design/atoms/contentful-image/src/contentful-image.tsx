@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import { useTheme } from "emotion-theming";
+import { useTheme } from "@emotion/react";
 import { getImageUrl } from "./utils";
+import { Theme as EvernestTheme } from "@evernest/theme";
 import {
 	AssetFormat,
 	BuildSrcSetParams,
 	ContentfulImageProps,
 	ImageSizes,
-	ImgWrapperProps
+	ImgWrapperProps,
 } from "./types";
+
+// https://emotion.sh/docs/emotion-11#theme-type
+declare module "@emotion/react" {
+	export interface Theme extends EvernestTheme {}
+}
 
 const buildSrcSet = ({ url, sizes, fm, breakpoints }: BuildSrcSetParams): string => {
 	return Object.entries(sizes)
