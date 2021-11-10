@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.10](https://github.com/everdevs/design-system/compare/v0.5.9...v0.5.10) (2021-11-10)
+
+
+### Bug Fixes
+
+* **grid:** prop errors ([#97](https://github.com/everdevs/design-system/issues/97)) ([c4fd438](https://github.com/everdevs/design-system/commit/c4fd43837dcebf16da5dbb1cf18dd1731583135e))
+
+
+
+
+
 ## [0.5.9](https://github.com/everdevs/design-system/compare/v0.5.8...v0.5.9) (2021-10-18)
 
 **Note:** Version bump only for package @evernest/grid
