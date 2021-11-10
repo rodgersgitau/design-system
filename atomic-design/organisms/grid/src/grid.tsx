@@ -9,9 +9,7 @@ export const GridWrapper = styled.div`
 	width: 100%;
 `;
 
-export const StyledGrid = styled("div", {
-	shouldForwardProp: (propName: string) => !["theme"].includes(propName),
-})<GridProps>`
+export const StyledGrid = styled("div")<GridProps>`
 	display: flex;
 	flex-direction: column;
 	width: calc(100% - (var(${GRID_PADDING}) + var(${GUTTER})) * 2px);

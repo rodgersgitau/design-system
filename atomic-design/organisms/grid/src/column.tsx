@@ -3,9 +3,7 @@ import { css } from "@emotion/react";
 import { COLCOUNT, COLSPAN, COLUMN, GUTTER, PADDING } from "./constants";
 import { ColumnProps } from "./types";
 
-export const Column = styled("div", {
-	shouldForwardProp: (propName: string) => !["theme"].includes(propName),
-})<ColumnProps>`
+export const Column = styled("div")<ColumnProps>`
 	margin-left: calc(var(${GUTTER}) * 1px);
 	margin-right: calc(var(${GUTTER}) * 1px);
 	width: calc(100% / var(${COLCOUNT}) * var(${COLSPAN}) - var(${GUTTER}) * 2px);

@@ -3,9 +3,7 @@ import styled from "@emotion/styled";
 import { COLCOUNT, COLSPAN, GUTTER, PADDING } from "./constants";
 import { Alignment, RowProps } from "./types";
 
-export const Row = styled("div", {
-	shouldForwardProp: (propName: string) => !["theme"].includes(propName),
-})<RowProps>`
+export const Row = styled("div")<RowProps>`
 	${COLCOUNT}: var(${COLSPAN});
 	display: flex;
 	${({ raw, noWrap, reverse, justify }) => {
